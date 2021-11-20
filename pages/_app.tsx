@@ -1,8 +1,23 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Global, ThemeProvider } from '@emotion/react';
+import type { AppProps } from 'next/app';
+import { ScreenClassProvider, setConfiguration } from 'react-grid-system';
+import theme from 'theme';
+import styles from './styles';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }: AppProps) => {
+    setConfiguration({
+        gutterWidth: 0,
+        containerWidths: [540, 740, 960, 1152, 1152]
+    });
 
-export default MyApp
+    return (
+        <ThemeProvider theme={theme}>
+            <ScreenClassProvider>
+                <Global styles={styles} />
+                <Component {...pageProps} />
+            </ScreenClassProvider>
+        </ThemeProvider>
+    );
+};
+
+export default App;
