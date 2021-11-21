@@ -1,14 +1,4 @@
-export interface Colors {
-    primary: string;
-    white: string;
-    black: string;
-    text: string;
-    blue: string;
-    lightBlue: string;
-    green: string;
-    lightGreen: string;
-    grey: string;
-}
+import { Colors } from 'theme';
 
 const colors: Colors = {
     primary: '#ee3b53',
@@ -19,7 +9,9 @@ const colors: Colors = {
     lightBlue: '#f2f2ff',
     green: '#53d4aB',
     lightGreen: '#e6f9f1',
-    grey: '#f4f6fa'
+    grey: '#f4f6fa',
+    background: '#ffffff',
+    dot: '#e0e0e0'
 };
 
 export default colors;

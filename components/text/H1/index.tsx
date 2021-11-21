@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { H1 as Text } from './styles';
-import { Colors } from 'theme/colors';
+import { Colors } from 'theme';
 import { useTheme } from '@emotion/react';
 
 export interface ParagraphProps {

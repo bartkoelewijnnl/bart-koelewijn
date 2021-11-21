@@ -1,7 +1,16 @@
-import colors from './colors';
+export interface Colors {
+    primary: string;
+    white: string;
+    black: string;
+    text: string;
+    blue: string;
+    lightBlue: string;
+    green: string;
+    lightGreen: string;
+    grey: string;
+    background: string;
+    dot: string;
+}
 
-const theme = {
-    colors
-};
-
-export default theme;
+export { default as ThemeLight } from './light';
+export { default as ThemeDark } from './dark';

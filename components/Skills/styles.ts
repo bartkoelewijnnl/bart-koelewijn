@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { rgba } from 'polished';
+import { motion } from 'framer-motion';
 
-export const Skills = styled.div`
+export const Skills = styled(motion.div)`
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 0.5rem;
@@ -16,11 +17,4 @@ export const Skills = styled.div`
     padding: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-`;
-
-export const Skill = styled.div`
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: ${({ theme }) => theme.colors.grey};
-    border-radius: 50%;
 `;

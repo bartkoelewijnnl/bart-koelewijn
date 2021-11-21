@@ -1,17 +1,18 @@
-import { Global, ThemeProvider } from '@emotion/react';
+import { Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
+import ThemeProvider from 'providers/ThemeProvider';
 import { ScreenClassProvider, setConfiguration } from 'react-grid-system';
-import theme from 'theme';
-import styles from './styles';
+import styles from '../styles/styles';
+import { AnimatePresence } from 'framer-motion';
 
 const App = ({ Component, pageProps }: AppProps) => {
     setConfiguration({
         gutterWidth: 0,
-        containerWidths: [540, 740, 960, 1152, 1152]
+        containerWidths: [540, 740, 922, 1152, 1152]
     });
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
             <ScreenClassProvider>
                 <Global styles={styles} />
                 <Component {...pageProps} />

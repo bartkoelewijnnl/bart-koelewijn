@@ -1,19 +1,19 @@
 import React, { FC, useMemo } from 'react';
 import { Paragraph as Text } from './styles';
-import { Colors } from 'theme/colors';
+import { Colors } from 'theme';
 import { useTheme } from '@emotion/react';
 
 export interface ParagraphProps {
     variant?: keyof Colors;
-    center?: boolean;
+    noMargin?: boolean;
     className?: string;
 }
 
-const Paragraph: FC<ParagraphProps> = ({ children, variant = 'text', center, className }) => {
+const Paragraph: FC<ParagraphProps> = ({ children, variant = 'text', noMargin, className }) => {
     const theme = useTheme();
 
     return (
-        <Text color={theme.colors[variant]} center={center} className={className}>
+        <Text color={theme.colors[variant]} noMargin={noMargin} className={className}>
             {children}
         </Text>
     );
