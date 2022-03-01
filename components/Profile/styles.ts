@@ -12,4 +12,5 @@ export const ImageWrapper = styled.div`
     border-radius: 1rem;
     border-top-right-radius: 2.5rem;
     overflow: hidden;
+    display: inline-flex;
 `;

@@ -1,3 +1,6 @@
+import { Awaretrain } from './awaretrain';
+import { CycleCenter } from './cycleCenter';
+
 export interface Colors {
     primary: string;
     white: string;
@@ -10,6 +13,9 @@ export interface Colors {
     grey: string;
     background: string;
     dot: string;
+    button: string;
+    awaretrain: Awaretrain;
+    cycleCenter: CycleCenter;
 }
 
 export { default as ThemeLight } from './light';

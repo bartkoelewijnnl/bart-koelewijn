@@ -7,4 +7,5 @@ export const Card = styled.div<{ backgroundColor: string }>`
     border-top-right-radius: 2.5rem;
     padding-bottom: 15rem;
     margin-bottom: -13.5rem;
+    flex: 1;
 `;

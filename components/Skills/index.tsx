@@ -5,14 +5,14 @@ import { motion, Variants } from 'framer-motion';
 
 interface SkillsProps {}
 
-const container: Variants = {
-    hidden: { scale: 0.5 },
-    visible: { scale: 1, transition: { delayChildren: 0.2, staggerChildren: 0.2 } }
+// Motion.
+const containerVariants: Variants = {
+    animate: { transition: { delayChildren: 0.2, staggerChildren: 0.2 } }
 };
 
-const variants: Variants = {
-    hidden: { y: 16, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
+const skillVariants: Variants = {
+    initial: { y: 16, opacity: 0 },
+    animate: { y: 0, opacity: 1 }
 };
 
 // prettier-ignore
@@ -26,9 +26,9 @@ const skills: SkillProps[] = [
 const Skills: FC<SkillsProps> = () => {
     return (
         <>
-            <Wrapper key="skills" variants={container} initial="hidden" animate="visible">
+            <Wrapper key="skills" variants={containerVariants} initial="initial" whileInView="animate">
                 {skills.map((skill, index) => (
-                    <motion.div key={index} variants={variants}>
+                    <motion.div key={index} variants={skillVariants}>
                         <Skill {...skill} />
                     </motion.div>
                 ))}

@@ -1,4 +1,6 @@
 import { Colors } from 'theme';
+import { awaretrain } from 'theme/awaretrain';
+import { cycleCenter } from 'theme/cycleCenter';
 
 const colors: Colors = {
     primary: '#ee3b53',
@@ -11,7 +13,10 @@ const colors: Colors = {
     lightGreen: '#e6f9f1',
     grey: '#f4f6fa',
     background: '#ffffff',
-    dot: '#e0e0e0'
+    dot: '#e0e0e0',
+    button: '#ef5367',
+    awaretrain,
+    cycleCenter
 };
 
 export default colors;

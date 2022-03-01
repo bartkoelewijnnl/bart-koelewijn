@@ -1,12 +1,12 @@
 import Badge from 'components/Badge';
-import { RoundButton } from 'components/button';
-import Card from 'components/Card';
-import Dots from 'components/Dots';
+import { Button } from 'components/button';
 import { FormSwitch } from 'components/form';
+import Group from 'components/Group';
 import Intro from 'components/Intro';
 import IntroCta from 'components/IntroCta';
+import Margin from 'components/Margin';
 import Profile from 'components/Profile';
-import { SectionAwaretrain } from 'components/section';
+import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
 import { H1, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -28,23 +28,28 @@ const Home: NextPage = () => {
                 <Container>
                     <Row>
                         <Col
-                            md={3}
+                            md={4}
+                            lg={3}
                             offset={{
-                                md: 2
+                                md: 1,
+                                lg: 2
                             }}
                         >
                             <Profile />
                         </Col>
                         <Col
                             md={5}
+                            lg={5}
                             offset={{
-                                md: 2
+                                md: 2,
+                                lg: 2
                             }}
                         >
                             <H1>Bart Koelewijn</H1>
                             <Paragraph noMargin>
-                                Een brug tussen vormgeving en keiharde code. Hij zorgt dat de boel gesmeerd loopt, maar ook dat alles er
-                                strak, consistent en mooi uitziet.
+                                Hoi, ik ben Bart en als JavaScript-ontwikkelaar maak ik verschillende applicaties. Ik word enthousiast van
+                                een mooi ontwerp wat ik ‘pixel perfect’ mag uitwerken. Het overleggen met UI/UX’ers en het nadenken over
+                                animaties doe ik graag.
                             </Paragraph>
                             <IntroCta />
                         </Col>
@@ -52,36 +57,53 @@ const Home: NextPage = () => {
                 </Container>
             </Intro>
             <Container>
-                <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain">
+                <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
-                        Awaretrain realiseert bewustwording en gedragsverandering binnen de werkomgeving door middel van een nieuwe ‘teaser’
-                        app.
+                        Awaretrain realiseert bewustwording en gedragsverandering op het gebied van informatiebeveiliging, cybersecurity en
+                        privacy. Awaretrain wilde meer dan een visitekaartje achterlaten bij bedrijven, en zo kwamen zij tot het idee voor
+                        een app.
                     </Paragraph>
+                    <Paragraph>
+                        Elke dag kunnen medewerkers in deze app een nieuwe vraag beantwoorden over veiligheid. Dit is een leuke manier om
+                        security awareness te creëren op de werkvloer.
+                    </Paragraph>
+                    <Paragraph>
+                        Voor dit project heb ik de front-end gedaan voor alle schermen.
+                    </Paragraph>
+                    <Margin bottom={3.5}>
+                        <Group>
+                            <Badge icon="svg" color="blue" lightColor="lightBlue" />
+                            <Badge icon="react" color="blue" lightColor="lightBlue" />
+                            <Badge icon="apple" color="blue" lightColor="lightBlue" />
+                        </Group>
+                    </Margin>
+                    <Group isLarge>
+                        <Button icon="apple" ariaLabel="Open iPhone app">
+                            iPhone
+                        </Button>
+                        <Button icon="android" ariaLabel="Open Android app" isOutline>
+                            Android
+                        </Button>
+                    </Group>
+                </SectionAwaretrain>
+                <SectionCycleCenter
+                    subtitle="Customized APEX racefietsen"
+                    badges={[{ icon: 'svg' }, { icon: 'svg' }, { icon: 'svg' }]}
+                    variant="green"
+                    lightVariant="lightGreen"
+                    title="Cycle Center"
+                >
                     <Paragraph>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </Paragraph>
-                    <Badge variant="blue" lightVariant="lightBlue" />
-                </SectionAwaretrain>
-                <Row>
-                    <Col md={4}>
-                        <Paragraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.
-                        </Paragraph>
-                    </Col>
-                    <Col
-                        md={7}
-                        offset={{
-                            md: 1
-                        }}
-                    >
-                        <Card variant="green" lightVariant="lightGreen" title="Cycle Center 53-11" />
-                    </Col>
-                </Row>
+                    <Button icon="link" ariaLabel="Bezoek de Cycle Center website">
+                        Bezoek Cycle Center
+                    </Button>
+                </SectionCycleCenter>
+                <SectionCareer title="Carrière"></SectionCareer>
             </Container>
         </>
     );
