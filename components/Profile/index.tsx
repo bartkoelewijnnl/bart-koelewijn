@@ -1,8 +1,7 @@
-import Skills from 'components/Skills';
 import { FC } from 'react';
-import { Picture, ImageWrapper } from './styles';
 import Image from 'next/image';
-
+import { Picture, ImageWrapper } from './styles';
+import Skills from 'components/Skills';
 import ProfilePicture from 'public/images/profile.jpg';
 
 interface ProfileProps {}

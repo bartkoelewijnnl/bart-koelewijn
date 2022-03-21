@@ -7,14 +7,19 @@ export const Phone = styled.div`
     padding: 3rem 2rem 0;
     display: flex;
     flex-direction: column;
+    max-width: 24rem;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    position: relative;
+    padding-bottom: 2rem;
 
     &:before {
         content: '';
         top: 0;
-        left: 25%;
+        left: 30%;
         height: 1.5rem;
         position: absolute;
-        width: 50%;
+        width: 40%;
         background-color: ${({ theme }) => rgba(theme.colors.white, 0.25)};
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
@@ -24,20 +29,15 @@ export const Phone = styled.div`
 export const Content = styled.div`
     position: relative;
     display: flex;
-    padding-top: 0.5rem;
-    padding-left: 3.5rem;
-`;
-
-export const Left = styled.div`
-    flex: 1;
-    display: flex;
     flex-direction: column;
-    margin-right: 4px;
-`;
+    padding-top: 1rem;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
 
-export const Right = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-left: 4px;
+    /* Grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 6.5rem);
+    column-gap: 0.5rem;
+    row-gap: 1rem;
 `;

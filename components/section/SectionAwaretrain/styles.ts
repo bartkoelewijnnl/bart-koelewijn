@@ -3,19 +3,28 @@ import styled from '@emotion/styled';
 import CardComponent from 'components/Card';
 import { motion } from 'framer-motion';
 import { rgba } from 'polished';
-import { Row, ScreenClass } from 'react-grid-system';
+import { Row } from 'react-grid-system';
+import { maxWidthBreakpoint } from 'utils/breakpoint';
 
 export const Section = styled(Row)`
     margin-bottom: 7.5rem;
+
+    ${maxWidthBreakpoint(
+        'sm',
+        css`
+            margin-bottom: 5rem;
+        `
+    )}
 `;
 
-export const PhoneCardWrapper = styled.div<{ screenClass: ScreenClass }>`
-    ${({ screenClass }) =>
-        ['xs', 'sm'].includes(screenClass) &&
+export const PhoneCardWrapper = styled.div`
+    ${maxWidthBreakpoint(
+        'sm',
         css`
             max-width: 24rem;
             margin: 0 auto 2rem;
-        `}
+        `
+    )}
 `;
 
 export const PhoneWrapper = styled.div`
@@ -40,6 +49,14 @@ export const Phone = styled.div`
         border-bottom-right-radius: 1rem;
         z-index: 1;
     }
+
+    @media (max-width: 432px) {
+        margin-right: 0rem;
+
+        &:before {
+            width: 50%;
+        }
+    }
 `;
 
 export const Top = styled(motion.div)`
@@ -50,12 +67,27 @@ export const Top = styled(motion.div)`
     align-items: center;
 `;
 
-export const Gif = styled(motion.div)`
+export const Gif = styled(motion.div)<{ correctAnswers: number }>`
     height: 14rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => rgba(theme.colors.white, 0.1)};
     width: 100%;
     margin-bottom: -4rem;
+    background-image: url('/images/awaretrain-bad.gif');
+    background-size: cover;
+    background-position: center center;
+
+    ${({ correctAnswers }) =>
+        correctAnswers === 1 &&
+        css`
+            background-image: url('/images/awaretrain-mediocre.gif');
+        `}
+
+    ${({ correctAnswers }) =>
+        correctAnswers === 2 &&
+        css`
+            background-image: url('/images/awaretrain-perfect.gif');
+        `}
 `;
 
 export const Bottom = styled(motion.div)`
@@ -95,6 +127,11 @@ export const Button = styled(motion.button)`
 
 export const Card = styled(CardComponent)`
     margin-left: 25%;
+
+    @media (max-width: 432px) {
+        margin-left: 0;
+        margin-right: 2.5rem;
+    }
 `;
 
 export const Website = styled(motion.input)`

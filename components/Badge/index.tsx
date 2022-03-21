@@ -3,6 +3,7 @@ import Icon, { Icons, getColor } from 'components/Icon';
 import { FC } from 'react';
 import { Colors } from 'theme';
 import { Badge as Wrapper } from './styles';
+import ReactTooltip from 'react-tooltip';
 
 export interface BadgeProps {
     color: keyof Colors;
@@ -16,9 +17,12 @@ const Badge: FC<BadgeProps> = ({ color, lightColor, className, icon }) => {
     const backgroundColor = getColor(theme.colors, lightColor, theme.colors.lightBlue);
 
     return (
-        <Wrapper className={className} backgroundColor={backgroundColor}>
-            <Icon name={icon} color={color} />
-        </Wrapper>
+        <>
+            <Wrapper data-tip="hello world" className={className} backgroundColor={backgroundColor}>
+                <Icon name={icon} color={color} />
+            </Wrapper>
+            {/* <ReactTooltip effect="solid" /> */}
+        </>
     );
 };
 

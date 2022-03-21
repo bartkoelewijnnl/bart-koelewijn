@@ -12,7 +12,7 @@ export const Year = styled.span`
     font-size: 1rem;
     line-height: 1rem;
     color: ${({ theme }) => theme.colors.white};
-    width: 3.5rem;
+    width: 3rem;
 `;
 
 export const Line = styled.svg`

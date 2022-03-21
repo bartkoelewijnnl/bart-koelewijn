@@ -1,20 +1,20 @@
 import { Icons } from 'components/Icon';
 import { useThemeContext } from 'providers/ThemeProvider';
-import { FC } from 'react';
+import { FC, HTMLProps } from 'react';
 import { Button as Wrapper, Icon } from './styles';
 
-interface ButtonProps {
+interface ButtonProps extends Omit<HTMLProps<HTMLAnchorElement>, 'as'> {
     isOutline?: boolean;
-    ariaLabel?: string;
     icon?: keyof Icons;
+    isWhite?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ children, isOutline, ariaLabel, icon }) => {
+const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, ...props }) => {
     const { isDark } = useThemeContext();
 
     return (
-        <Wrapper aria-label={ariaLabel} isOutline={isOutline} isDark={isDark}>
-            {icon && <Icon color={isOutline ? 'button' : 'white'} name={icon} />}
+        <Wrapper isOutline={isOutline} isDark={isDark} isWhite={isWhite} {...props}>
+            {icon && <Icon color={(isOutline && !isWhite) || (!isOutline && isWhite) ? 'button' : 'white'} name={icon} />}
             {children}
         </Wrapper>
     );

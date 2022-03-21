@@ -10,6 +10,7 @@ export const Switch = styled.label`
     position: fixed;
     right: 40px;
     top: 40px;
+    z-index: 2;
 
     .switch {
         width: 3.5rem;

@@ -8,14 +8,15 @@ export interface ParagraphProps {
     variant?: keyof Colors;
     noMargin?: boolean;
     className?: string;
+    isItalic?: boolean;
 }
 
-const Paragraph: FC<ParagraphProps> = ({ children, variant = 'text', noMargin, className }) => {
+const Paragraph: FC<ParagraphProps> = ({ children, variant = 'text', noMargin, isItalic, className }) => {
     const theme = useTheme();
     const color = getColor(theme.colors, variant, theme.colors.text);
 
     return (
-        <Text color={color} noMargin={noMargin} className={className}>
+        <Text color={color} noMargin={noMargin} isItalic={isItalic} className={className}>
             {children}
         </Text>
     );

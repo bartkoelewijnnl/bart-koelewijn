@@ -7,7 +7,7 @@ interface RoundButtonProps {}
 const RoundButton: FC<RoundButtonProps> = () => {
     return (
         <Button>
-            <Icon name='down' />
+            <Icon name="down" />
         </Button>
     );
 };

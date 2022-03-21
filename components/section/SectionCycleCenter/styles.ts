@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import CardComponent from 'components/Card';
-import { rgb, rgba } from 'polished';
-import { Row } from 'react-grid-system';
+import { rgba } from 'polished';
+import { maxWidthBreakpoint } from 'utils/breakpoint';
 
 // export const Section = styled(Row)`
 //     margin-bottom: 7.5rem;
@@ -10,6 +9,19 @@ import { Row } from 'react-grid-system';
 
 export const Content = styled.div`
     display: flex;
+    align-items: center;
+`;
+
+export const BikeContent = styled.div`
+    display: flex;
+    align-items: center;
+
+    ${maxWidthBreakpoint(
+        'sm',
+        css`
+            flex-direction: column;
+        `
+    )}
 `;
 
 export const Background = styled.div`
@@ -18,7 +30,7 @@ export const Background = styled.div`
     margin-right: 3rem;
     border-radius: 1rem;
     border-top-left-radius: 2.5rem;
-    padding: 2rem 2rem 2rem 1rem;
+    padding: 2rem;
 `;
 
 export const Side = styled.div``;

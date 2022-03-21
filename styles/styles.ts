@@ -1,7 +1,6 @@
 import { css, Theme } from '@emotion/react';
-import { ScreenClass } from 'react-grid-system';
 
-const styles = (theme: Theme, screenClass: ScreenClass) => css`
+const styles = (theme: Theme) => css`
     * {
         margin: 0;
         padding: 0;

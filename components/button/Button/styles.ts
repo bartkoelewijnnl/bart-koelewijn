@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import IconComponent from 'components/Icon';
 import { rgba } from 'polished';
 
-export const Button = styled.button<{ isOutline?: boolean; isDark?: boolean }>`
+export const Button = styled.a<{ isOutline?: boolean; isDark?: boolean; isWhite?: boolean }>`
     height: 3.5rem;
     border-radius: 8px;
     color: ${({ theme }) => theme.colors.white};
@@ -13,8 +13,9 @@ export const Button = styled.button<{ isOutline?: boolean; isDark?: boolean }>`
     padding: 0 24px;
     font-size: 1rem;
     line-height: 1;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;
@@ -30,6 +31,22 @@ export const Button = styled.button<{ isOutline?: boolean; isDark?: boolean }>`
             background-color: transparent;
             border: 2px solid ${theme.colors.button};
             color: ${isDark ? theme.colors.white : theme.colors.primary};
+        `}
+
+    ${({ theme, isWhite, isOutline }) =>
+        isWhite &&
+        !isOutline &&
+        css`
+            background-color: ${theme.colors.white};
+            color: ${theme.colors.primary};
+        `}
+
+    ${({ theme, isWhite, isOutline }) =>
+        isWhite &&
+        isOutline &&
+        css`
+            border-color: ${theme.colors.white};
+            color: ${theme.colors.white};
         `}
 `;
 

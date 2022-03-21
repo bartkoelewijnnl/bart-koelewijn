@@ -19,10 +19,12 @@ export const FrameColor = styled.div`
     left: 0;
 `;
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<{ opacity?: number }>`
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: ${({ opacity }) => opacity ?? 1};
+    transition: opacity 0.4s ease;
 `;

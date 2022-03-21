@@ -4,19 +4,21 @@ import Card from 'components/Card';
 import Group from 'components/Group';
 import Margin from 'components/Margin';
 import { FC, useState } from 'react';
-import { Col, Row } from 'react-grid-system';
+import { Col, Hidden, Row, useScreenClass } from 'react-grid-system';
 import { SectionProps } from '..';
-import { Content, Background, Side, Category } from './styles';
+import { Content, Background, Side, Category, BikeContent } from './styles';
 import ColorPicker, { COLORS } from './components/ColorPicker';
 import Bike from './components/Bike';
+import FinishPicker from './components/FinishPicker';
 
 interface SectionCycleCenterProps extends SectionProps {
     badges: Omit<BadgeProps, 'color' | 'lightColor'>[];
 }
 
 const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...card }) => {
+    const screenClass = useScreenClass();
     const [color, setColor] = useState<string>(COLORS[0]);
-    const [isGlossy, setIsGlossy] = useState<boolean>(false);
+    const [isGlossy, setIsGlossy] = useState<boolean>(true);
 
     return (
         <Margin bottom={7.5}>
@@ -50,25 +52,28 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                 >
                     {/* TODO content is used twice, make flex layout component */}
                     <Content>
-                        <Margin right={4}>
-                            <Group>
-                                {badges.map((badge, index) => (
-                                    <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
-                                ))}
-                            </Group>
-                        </Margin>
+                        <Hidden xs sm>
+                            <Margin right={4}>
+                                <Group>
+                                    {badges.map((badge, index) => (
+                                        <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
+                                    ))}
+                                </Group>
+                            </Margin>
+                        </Hidden>
 
                         <Card {...card} />
                     </Content>
                     <Background>
-                        <Content>
-                            <Bike color={color} />
+                        <BikeContent>
+                            <Bike color={color} isGlossy={isGlossy} />
                             <Side>
                                 <Category>Ontwerp</Category>
                                 <ColorPicker color={color} setColor={setColor} />
                                 <Category>Afwerking</Category>
+                                <FinishPicker isGlossy={isGlossy} setIsGlossy={setIsGlossy} />
                             </Side>
-                        </Content>
+                        </BikeContent>
                     </Background>
                 </Col>
             </Row>

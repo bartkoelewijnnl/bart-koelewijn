@@ -4,6 +4,7 @@ import { FormSwitch } from 'components/form';
 import Group from 'components/Group';
 import Intro from 'components/Intro';
 import IntroCta from 'components/IntroCta';
+import Logo from 'components/Logo';
 import Margin from 'components/Margin';
 import Profile from 'components/Profile';
 import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
                                 lg: 2
                             }}
                         >
+                            <Logo />
                             <H1>Bart Koelewijn</H1>
                             <Paragraph noMargin>
                                 Hoi, ik ben Bart en als JavaScript-ontwikkelaar maak ik verschillende applicaties. Ik word enthousiast van
@@ -59,17 +61,17 @@ const Home: NextPage = () => {
             <Container>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
-                        Awaretrain realiseert bewustwording en gedragsverandering op het gebied van informatiebeveiliging, cybersecurity en
-                        privacy. Awaretrain wilde meer dan een visitekaartje achterlaten bij bedrijven, en zo kwamen zij tot het idee voor
-                        een app.
+                        Awaretrain is een adviesbureau dat bewustwording realiseert op het gebied van informatiebeveiliging, cybersecurity
+                        en privacy. Awaretrain wilde meer dan een visitekaartje achterlaten bij bedrijven, en zo kwamen zij tot het idee
+                        voor een app. In de app zijn cyber security en privacy belangrijke onderwerpen, die aan de orde van de dag zijn op
+                        de werkvloer. In de app krijgen gebruikers dan ook vragen over security in bedrijfsgerelateerd sfeer.
                     </Paragraph>
                     <Paragraph>
-                        Elke dag kunnen medewerkers in deze app een nieuwe vraag beantwoorden over veiligheid. Dit is een leuke manier om
-                        security awareness te creëren op de werkvloer.
+                        De app is geschreven in React Native. Ik heb elk front-end scherm opgezet vanuit een (Adobe XD) ontwerp bestand. De
+                        leukste uitdaging was het uitwerken van een graadmeter op het score scherm. Dit heb ik gedaan met SVG en
+                        &apos;React Native Animated&apos;.
                     </Paragraph>
-                    <Paragraph>
-                        Voor dit project heb ik de front-end gedaan voor alle schermen.
-                    </Paragraph>
+                    <Paragraph isItalic>Denk jij de hoogste score te halen, test je kennis hiernaast of download de app.</Paragraph>
                     <Margin bottom={3.5}>
                         <Group>
                             <Badge icon="svg" color="blue" lightColor="lightBlue" />
@@ -78,10 +80,21 @@ const Home: NextPage = () => {
                         </Group>
                     </Margin>
                     <Group isLarge>
-                        <Button icon="apple" ariaLabel="Open iPhone app">
+                        <Button
+                            icon="apple"
+                            href="https://apps.apple.com/nl/app/awaretrain-security-awareness/id1527995399/"
+                            target="_blank"
+                            aria-label="Open iPhone app"
+                        >
                             iPhone
                         </Button>
-                        <Button icon="android" ariaLabel="Open Android app" isOutline>
+                        <Button
+                            icon="android"
+                            href="https://play.google.com/store/apps/details?id=nl.bluenotion.awaretrain&hl=nl/"
+                            target="_blank"
+                            aria-label="Open Android app"
+                            isOutline
+                        >
                             Android
                         </Button>
                     </Group>
@@ -94,16 +107,21 @@ const Home: NextPage = () => {
                     title="Cycle Center"
                 >
                     <Paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Cycle Center 53-11 is een tweewielerwinkel met 40 jaar ervaring in fietsverkoop, -ontwerp en spuiten. Hoe brengen we
+                        deze expertise en ambiance ook online over? Met een Bikebuilder!
                     </Paragraph>
-                    <Button icon="link" ariaLabel="Bezoek de Cycle Center website">
+                    <Button
+                        href="https://configurator.apexbikes.cc/"
+                        target="_blank"
+                        icon="link"
+                        aria-label="Bezoek de Cycle Center website"
+                    >
                         Bezoek Cycle Center
                     </Button>
                 </SectionCycleCenter>
-                <SectionCareer title="Carrière"></SectionCareer>
+                <SectionCareer title="Carrière">
+                    <Paragraph>Een leuk idee, nieuwsgierig of gewoon een vraag?</Paragraph>
+                </SectionCareer>
             </Container>
         </>
     );
