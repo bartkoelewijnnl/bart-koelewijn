@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { rgba } from 'polished';
 import { Row } from 'react-grid-system';
 import { maxWidthBreakpoint } from 'utils/breakpoint';
+import { prefix } from 'utils/prefix';
 
 export const Section = styled(Row)`
     margin-bottom: 7.5rem;
@@ -73,20 +74,20 @@ export const Gif = styled(motion.div)<{ correctAnswers: number }>`
     background-color: ${({ theme }) => rgba(theme.colors.white, 0.1)};
     width: 100%;
     margin-bottom: -4rem;
-    background-image: url('/images/awaretrain-bad.gif');
+    background-image: url('${prefix}/images/awaretrain-bad.gif');
     background-size: cover;
     background-position: center center;
 
     ${({ correctAnswers }) =>
         correctAnswers === 1 &&
         css`
-            background-image: url('/images/awaretrain-mediocre.gif');
+            background-image: url('${prefix}/images/awaretrain-mediocre.gif');
         `}
 
     ${({ correctAnswers }) =>
         correctAnswers === 2 &&
         css`
-            background-image: url('/images/awaretrain-perfect.gif');
+            background-image: url('${prefix}/images/awaretrain-perfect.gif');
         `}
 `;
 

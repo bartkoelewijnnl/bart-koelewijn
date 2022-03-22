@@ -2,6 +2,16 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { rgba } from 'polished';
 import { maxWidthBreakpoint } from 'utils/breakpoint';
+import CardComponent from 'components/Card';
+
+export const Card = styled(CardComponent)`
+    ${maxWidthBreakpoint(
+        'sm',
+        css`
+            margin-right: 2.5rem;
+        `
+    )}
+`;
 
 // export const Section = styled(Row)`
 //     margin-bottom: 7.5rem;
@@ -36,6 +46,13 @@ export const Background = styled.div`
         'md',
         css`
             margin-bottom: 3.5rem;
+        `
+    )}
+
+    ${maxWidthBreakpoint(
+        'sm',
+        css`
+            margin-right: 0;
         `
     )}
 `;

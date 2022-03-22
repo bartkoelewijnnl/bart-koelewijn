@@ -1,6 +1,4 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Image from 'next/image';
 import { prefix } from 'utils/prefix';
 
 export const Wrapper = styled.div`

@@ -1,12 +1,10 @@
 import Badge, { BadgeProps } from 'components/Badge';
-import { Button } from 'components/button/RoundButton/styles';
-import Card from 'components/Card';
 import Group from 'components/Group';
 import Margin from 'components/Margin';
 import { FC, useState } from 'react';
-import { Col, Hidden, Row, useScreenClass } from 'react-grid-system';
+import { Col, Hidden, Row } from 'react-grid-system';
 import { SectionProps } from '..';
-import { Content, Background, Side, Category, BikeContent } from './styles';
+import { Content, Background, Side, Category, BikeContent, Card } from './styles';
 import ColorPicker, { COLORS } from './components/ColorPicker';
 import Bike from './components/Bike';
 import FinishPicker from './components/FinishPicker';
@@ -16,7 +14,6 @@ interface SectionCycleCenterProps extends SectionProps {
 }
 
 const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...card }) => {
-    const screenClass = useScreenClass();
     const [color, setColor] = useState<string>(COLORS[0]);
     const [isGlossy, setIsGlossy] = useState<boolean>(true);
 
