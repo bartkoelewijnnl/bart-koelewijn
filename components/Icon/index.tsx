@@ -129,6 +129,7 @@ const Icon: FC<IconProps> = ({ size = 1.5, color = 'primary', name, className })
             fill={getColor(theme.colors, color, theme.colors.primary)}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
+            style={{ flex: `0 0 ${size}rem` }}
             width={`${size}rem`}
             height={`${size}rem`}
         >

@@ -1,10 +1,19 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { maxWidthBreakpoint } from 'utils/breakpoint';
 import { prefix } from 'utils/prefix';
 
 export const Wrapper = styled.div`
     flex: 1;
     position: relative;
     margin-right: 1rem;
+
+    ${maxWidthBreakpoint(
+        'sm',
+        css`
+            margin-right: 0;
+        `
+    )}
 `;
 
 export const FrameColor = styled.div`
