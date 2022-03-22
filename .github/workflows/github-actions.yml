@@ -37,6 +37,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: out
-          clean: true
+          BASE_BRANCH: main
+          BRANCH: gh-pages
+          FOLDER: out
+          CLEAN: true
