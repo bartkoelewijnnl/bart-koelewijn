@@ -144,6 +144,7 @@ export const Website = styled(motion.input)`
     color: ${({ theme }) => theme.colors.white};
     font-size: 1rem;
     margin-bottom: 1rem;
+    -webkit-appearance: none;
 `;
 
 export const Question = styled(motion.span)`
