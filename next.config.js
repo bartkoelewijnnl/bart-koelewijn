@@ -5,7 +5,7 @@ module.exports = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   images: {
     loader: 'akamai',
-    path: '',
+    path: process.env.NEXT_PUBLIC_BASE_PATH || '',
   },
   exportPathMap: () => ({
     '/': { page: '/' },
