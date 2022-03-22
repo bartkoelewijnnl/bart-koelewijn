@@ -50,7 +50,6 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                         lg: 2
                     }}
                 >
-                    {/* TODO content is used twice, make flex layout component */}
                     <Content>
                         <Hidden xs sm>
                             <Margin right={4}>
@@ -61,7 +60,6 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                                 </Group>
                             </Margin>
                         </Hidden>
-
                         <Card {...card} />
                     </Content>
                     <Background>

@@ -145,6 +145,8 @@ export const Website = styled(motion.input)`
     font-size: 1rem;
     margin-bottom: 1rem;
     -webkit-appearance: none;
+    -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
+    opacity: 1; /* required on iOS */
 `;
 
 export const Question = styled(motion.span)`

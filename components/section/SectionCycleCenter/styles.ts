@@ -31,6 +31,13 @@ export const Background = styled.div`
     border-radius: 1rem;
     border-top-left-radius: 2.5rem;
     padding: 2rem;
+
+    ${maxWidthBreakpoint(
+        'md',
+        css`
+            margin-bottom: 3.5rem;
+        `
+    )}
 `;
 
 export const Side = styled.div``;
