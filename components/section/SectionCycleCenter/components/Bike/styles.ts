@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { prefix } from 'utils/prefix';
 
 export const Wrapper = styled.div`
     flex: 1;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
 export const FrameColor = styled.div`
     width: 100%;
     height: 100%;
-    mask-image: url(/images/bike-color.png);
+    mask-image: url('${prefix}/images/bike-color.png');
     mask-size: 100%;
     transition: background 0.4s ease;
     position: absolute;
