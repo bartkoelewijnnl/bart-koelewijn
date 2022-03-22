@@ -57,7 +57,8 @@ const ThemeProvider: FC = ({ children }) => {
     // Render.
     return (
         <ThemeContext.Provider value={{ isDark, setIsDark: handleOnThemeChange }}>
-            <EmotionThemeProvider theme={isDark ? ThemeDark : ThemeLight}>{children}</EmotionThemeProvider>
+            {/* <EmotionThemeProvider theme={isDark ? ThemeDark : ThemeLight}>{children}</EmotionThemeProvider> */}
+            <EmotionThemeProvider theme={ThemeLight}>{children}</EmotionThemeProvider>
         </ThemeContext.Provider>
     );
 };
