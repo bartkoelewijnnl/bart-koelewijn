@@ -8,7 +8,7 @@ import Logo from 'components/Logo';
 import Margin from 'components/Margin';
 import Profile from 'components/Profile';
 import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
-import { H1, Paragraph } from 'components/text';
+import { H1, H2, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useThemeContext } from 'providers/ThemeProvider';
@@ -58,6 +58,7 @@ const Home: NextPage = () => {
                     </Row>
                 </Container>
             </Intro>
+            <H2>Portfolio</H2>
             <Container>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
