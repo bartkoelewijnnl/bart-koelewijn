@@ -19,7 +19,6 @@ export const Card = styled(CardComponent)`
 
 export const Content = styled.div`
     display: flex;
-    align-items: center;
 `;
 
 export const BikeContent = styled.div`

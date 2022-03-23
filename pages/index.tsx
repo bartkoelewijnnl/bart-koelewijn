@@ -117,7 +117,7 @@ const Home: NextPage = () => {
                 </SectionAwaretrain>
                 <SectionCycleCenter
                     subtitle="Customized APEX racefietsen"
-                    badges={[{ icon: 'svg' }, { icon: 'svg' }, { icon: 'svg' }]}
+                    badges={[{ icon: 'slider' }, { icon: 'css' }, { icon: 'svg' }]}
                     variant="green"
                     lightVariant="lightGreen"
                     title="Cycle Center"
