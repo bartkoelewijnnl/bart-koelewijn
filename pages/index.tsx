@@ -9,7 +9,7 @@ import Margin from 'components/Margin';
 import Profile from 'components/Profile';
 import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
 import { H1, H2, Paragraph } from 'components/text';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useThemeContext } from 'providers/ThemeProvider';
 import { Container, Row, Col } from 'react-grid-system';
@@ -58,8 +58,23 @@ const Home: NextPage = () => {
                     </Row>
                 </Container>
             </Intro>
-            <H2>Portfolio</H2>
             <Container>
+                <Row>
+                    <Col
+                        xs={12}
+                        sm={12}
+                        md={5}
+                        lg={5}
+                        xl={4}
+                        offset={{
+                            md: 7,
+                            lg: 7,
+                            xl: 6
+                        }}
+                    >
+                        <H2>Portfolio</H2>
+                    </Col>
+                </Row>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
                         Awaretrain is een adviesbureau dat bewustwording realiseert op het gebied van informatiebeveiliging, cybersecurity

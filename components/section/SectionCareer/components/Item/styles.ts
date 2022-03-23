@@ -36,4 +36,5 @@ export const Company = styled.span`
     line-height: 1.125rem;
     font-weight: 400;
     font-style: italic;
+    display: flex;
 `;
