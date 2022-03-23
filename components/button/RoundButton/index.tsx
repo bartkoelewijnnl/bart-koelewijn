@@ -1,12 +1,12 @@
 import Icon from 'components/Icon';
-import { FC } from 'react';
+import { FC, HTMLProps } from 'react';
 import { Button } from './styles';
 
-interface RoundButtonProps {}
+interface RoundButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'as' | 'type'> {}
 
-const RoundButton: FC<RoundButtonProps> = () => {
+const RoundButton: FC<RoundButtonProps> = (props) => {
     return (
-        <Button>
+        <Button {...props}>
             <Icon name="down" />
         </Button>
     );
