@@ -9,7 +9,7 @@ const IntroCta: FC<IntroCtaProps> = () => {
     return (
         <Cta>
             <Dots isSmall />
-            <Link to="awaretrain" smooth offset={-64}>
+            <Link aria-label="scroll naar inhoud" to="awaretrain" smooth offset={-64}>
                 <RoundButton />
             </Link>
         </Cta>
