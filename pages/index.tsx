@@ -131,14 +131,4 @@ const Home: NextPage = () => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-    res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
-
-    return {
-        props: {
-            time: new Date().toISOString()
-        }
-    };
-};
-
 export default Home;
