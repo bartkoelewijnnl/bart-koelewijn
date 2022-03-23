@@ -28,7 +28,7 @@ const SectionCareer: FC<SectionCareerProps> = ({ title, children }) => {
                     <Lines minYear={MIN_YEAR} maxYear={MAX_YEAR} />
                 </Content>
                 <Margin bottom={1}>
-                    <Button href="https://www.linkedin.com/in/bart-koelewijn-a8327a139/" target="_blank" icon="link" isWhite>
+                    <Button href="https://www.linkedin.com/in/bart-koelewijn-ba1424b7/" target="_blank" icon="link" isWhite>
                         LinkedIn
                     </Button>
                 </Margin>
