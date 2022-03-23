@@ -92,7 +92,7 @@ const Home: NextPage = () => {
                         <Group>
                             <Badge icon="svg" color="blue" lightColor="lightBlue" />
                             <Badge icon="react" color="blue" lightColor="lightBlue" />
-                            <Badge icon="apple" color="blue" lightColor="lightBlue" />
+                            <Badge icon="transition" color="blue" lightColor="lightBlue" />
                         </Group>
                     </Margin>
                     <Group isLarge>
