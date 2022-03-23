@@ -10,7 +10,7 @@ const IntroCta: FC<IntroCtaProps> = () => {
         <Cta>
             <Dots isSmall />
             <Link href="#awaretrain" to="awaretrain" smooth offset={-64} aria-label="Scroll naar inhoud">
-                <RoundButton />
+                <RoundButton aria-label="Scroll naar inhoud button" />
             </Link>
         </Cta>
     );
