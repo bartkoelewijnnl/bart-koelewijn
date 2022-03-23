@@ -9,7 +9,7 @@ import Margin from 'components/Margin';
 import Profile from 'components/Profile';
 import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
 import { H1, H2, Paragraph } from 'components/text';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { useThemeContext } from 'providers/ThemeProvider';
 import { Container, Row, Col } from 'react-grid-system';
@@ -129,6 +129,16 @@ const Home: NextPage = () => {
             </Container>
         </>
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+    res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
+
+    return {
+        props: {
+            time: new Date().toISOString()
+        }
+    };
 };
 
 export default Home;
