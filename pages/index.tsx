@@ -59,22 +59,6 @@ const Home: NextPage = () => {
                 </Container>
             </Intro>
             <Container>
-                <Row>
-                    <Col
-                        xs={12}
-                        sm={12}
-                        md={5}
-                        lg={5}
-                        xl={4}
-                        offset={{
-                            md: 7,
-                            lg: 7,
-                            xl: 6
-                        }}
-                    >
-                        <H2>Portfolio</H2>
-                    </Col>
-                </Row>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
                         Awaretrain is een adviesbureau dat bewustwording realiseert op het gebied van informatiebeveiliging, cybersecurity

@@ -22,9 +22,4 @@ const App = ({ Component, pageProps }: AppProps) => {
     );
 };
 
-// App.getInitialProps = (ctx) => {
-//     const userAgent = process.browser ? navigator.userAgent : ctx.req.headers['user-agent'];
-//     console.log({ userAgent });
-// };
-
 export default App;
