@@ -20,7 +20,7 @@ export const Wrapper = styled('div', {
     padding: 1rem;
 `;
 
-export const Title = styled.h4`
+export const Title = styled.span`
     color: ${({ theme }) => theme.colors.white};
     flex: 1;
     font-size: 0.875rem;
