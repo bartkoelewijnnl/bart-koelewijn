@@ -143,7 +143,7 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
     };
 
     return (
-        <Element name="awaretrain">
+        <Element id="awaretrain" name="awaretrain">
             <Section>
                 <Col
                     xs={12}
