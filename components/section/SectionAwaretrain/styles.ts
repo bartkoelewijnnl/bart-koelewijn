@@ -6,6 +6,7 @@ import { rgba } from 'polished';
 import { Row } from 'react-grid-system';
 import { maxWidthBreakpoint } from 'utils/breakpoint';
 import { prefix } from 'utils/prefix';
+import isPropValid from '@emotion/is-prop-valid';
 
 export const Section = styled(Row)`
     margin-bottom: 7.5rem;
@@ -68,7 +69,9 @@ export const Top = styled(motion.div)`
     align-items: center;
 `;
 
-export const Gif = styled(motion.div)<{ correctAnswers: number }>`
+export const Gif = styled(motion.div, {
+    shouldForwardProp: (prop) => typeof prop === 'string' && isPropValid(prop) && prop !== 'correctAnswers'
+})<{ correctAnswers: number }>`
     height: 14rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => rgba(theme.colors.white, 0.1)};
@@ -161,7 +164,9 @@ export const Question = styled(motion.span)`
     align-self: flex-start;
 `;
 
-export const Answers = styled(motion.div)<{ isFirst?: boolean }>`
+export const Answers = styled(motion.div, {
+    shouldForwardProp: (prop) => typeof prop === 'string' && isPropValid(prop) && prop !== 'isFirst'
+})<{ isFirst?: boolean }>`
     border: 1px solid #eaf0f7;
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 8px;

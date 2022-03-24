@@ -44,22 +44,22 @@ interface QA {
 
 const qas: QA[] = [
     {
-        url: 'https://bartkoelewijn.nl/',
-        question: 'Is de bovenstaande URL veilig?',
+        // url: 'https://bartkoelewijn.nl/',
+        question: 'Wie is binnen jouw organisatie verantwoordelijk voor informatiebeveiliging',
         explanation:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'Alle medewerkers zijn verantwoordelijk voor informatiebeveiliging binnen jouw organisatie. Deze verantwoordelijkheid ligt niet bij één specifieke afdeling.',
         answers: [
             {
                 id: '1-1',
-                answer: 'Ja, want de URL bevat https://.'
+                answer: 'Alle medewerkers.'
             },
             {
                 id: '1-2',
-                answer: 'Nee, want WWW staat niet in de URL.'
+                answer: 'De ICT-afdeling.'
             },
             {
                 id: '1-3',
-                answer: 'Ja, want de URL bevat https://.'
+                answer: 'De beveiliging.'
             }
         ],
         correctAnswer: '1-1'
