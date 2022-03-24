@@ -10,18 +10,19 @@ export interface BadgeProps {
     lightColor: keyof Colors;
     icon: keyof Icons;
     className?: string;
+    title: string;
 }
 
-const Badge: FC<BadgeProps> = ({ color, lightColor, className, icon }) => {
+const Badge: FC<BadgeProps> = ({ color, lightColor, className, icon, title }) => {
     const theme = useTheme();
     const backgroundColor = getColor(theme.colors, lightColor, theme.colors.lightBlue);
 
     return (
         <>
-            <Wrapper data-tip="hello world" className={className} backgroundColor={backgroundColor}>
+            <Wrapper data-tip={title} className={className} backgroundColor={backgroundColor}>
                 <Icon name={icon} color={color} />
             </Wrapper>
-            {/* <ReactTooltip effect="solid" /> */}
+            <ReactTooltip effect="solid" />
         </>
     );
 };

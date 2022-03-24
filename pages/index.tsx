@@ -74,9 +74,9 @@ const Home: NextPage = () => {
                     <Paragraph isItalic>Denk jij de hoogste score te halen, test je kennis hiernaast of download de app.</Paragraph>
                     <Margin bottom={3.5}>
                         <Group>
-                            <Badge icon="svg" color="blue" lightColor="lightBlue" />
-                            <Badge icon="react" color="blue" lightColor="lightBlue" />
-                            <Badge icon="transition" color="blue" lightColor="lightBlue" />
+                            <Badge title="SVG" icon="svg" color="blue" lightColor="lightBlue" />
+                            <Badge title="Formik" icon="formik" color="blue" lightColor="lightBlue" />
+                            <Badge title="Animatie" icon="transition" color="blue" lightColor="lightBlue" />
                         </Group>
                     </Margin>
                     <Group isLarge>
@@ -101,7 +101,11 @@ const Home: NextPage = () => {
                 </SectionAwaretrain>
                 <SectionCycleCenter
                     subtitle="Customized APEX racefietsen"
-                    badges={[{ icon: 'slider' }, { icon: 'css' }, { icon: 'svg' }]}
+                    badges={[
+                        { icon: 'slider', title: 'Redux' },
+                        { icon: 'css', title: 'Lorem' },
+                        { icon: 'svg', title: 'Lorem' }
+                    ]}
                     variant="green"
                     lightVariant="lightGreen"
                     title="Cycle Center"
