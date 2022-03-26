@@ -8,7 +8,7 @@ import Logo from 'components/Logo';
 import Margin from 'components/Margin';
 import Profile from 'components/Profile';
 import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
-import { H1, H2, Paragraph } from 'components/text';
+import { H1, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useThemeContext } from 'providers/ThemeProvider';
@@ -102,8 +102,8 @@ const Home: NextPage = () => {
                 <SectionCycleCenter
                     subtitle="Customized APEX racefietsen"
                     badges={[
-                        { icon: 'slider', title: 'Redux' },
-                        { icon: 'css', title: 'Lorem' },
+                        { icon: 'redux', title: 'Redux' },
+                        { icon: 'slider', title: 'Configurator' },
                         { icon: 'svg', title: 'Lorem' }
                     ]}
                     variant="green"
@@ -117,8 +117,8 @@ const Home: NextPage = () => {
                     </Paragraph>
                     <Paragraph>
                         De app is geschreven met React in combinatie van Redux. De Bikebuilder/configurator heb ik gebouwd op een API
-                        geschreven door collega&#8217;s. De vele opties en afhankelijkheden zorgde voor een leuke uitdaging en een resultaat waar
-                        ik trots op ben.
+                        geschreven door collega&#8217;s. De vele opties en afhankelijkheden zorgde voor een leuke uitdaging en een resultaat
+                        waar ik trots op ben.
                     </Paragraph>
                     <Paragraph isItalic>Welke kleur fiets kies jij?</Paragraph>
                     <Button
