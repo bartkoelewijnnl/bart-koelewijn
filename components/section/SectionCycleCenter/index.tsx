@@ -14,7 +14,7 @@ interface SectionCycleCenterProps extends SectionProps {
 }
 
 const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...card }) => {
-    const [color, setColor] = useState<string>(COLORS[0]);
+    const [color, setColor] = useState<string>(COLORS[1]);
     const [isGlossy, setIsGlossy] = useState<boolean>(true);
 
     return (
