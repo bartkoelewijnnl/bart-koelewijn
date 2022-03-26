@@ -67,7 +67,7 @@ const Home: NextPage = () => {
                         de werkvloer. In de app krijgen gebruikers dan ook vragen over security in bedrijfsgerelateerd sfeer.
                     </Paragraph>
                     <Paragraph>
-                        De app is geschreven in React Native. Ik heb elk front-end scherm opgezet vanuit een (Adobe XD) ontwerp bestand. De
+                        De app is geschreven met React Native. Ik heb elk front-end scherm opgezet vanuit een (Adobe XD) ontwerp bestand. De
                         leukste uitdaging was het uitwerken van een graadmeter op het score scherm. Dit heb ik gedaan met SVG en &apos;React
                         Native Animated&apos;.
                     </Paragraph>
@@ -111,12 +111,16 @@ const Home: NextPage = () => {
                     title="Cycle Center"
                 >
                     <Paragraph>
-                        Cycle Center 53-11 is een tweewielerwinkel met 40 jaar ervaring in fietsverkoop, -ontwerp en spuiten. Lorem ipsum
-                        dolor sit amet, consectetur adipiscing elit. In scelerisque pellentesque arcu, at ultrices nunc sodales in. Sed id
-                        ex ut magna finibus accumsan et ut mauris. Curabitur non semper magna. Aliquam suscipit dui sit amet dui feugiat
-                        finibus. Ut quis purus iaculis, tempus arcu sed, scelerisque ante. Etiam dui quam, accumsan et massa id, fringilla
-                        viverra mauris. In eu leo et lorem cursus blandit eu ac augue.
+                        Cycle Center 53-11 is een tweewielerwinkel met 40 jaar ervaring in fietsverkoop, -ontwerp en spuiten. Deze expertise
+                        brengen ze online over met een Bikebuilder. De tool geeft de klant inzicht in talloze mogelijkheden. Als de klant
+                        online een beeld heeft gekregen wat hij/zij (ongeveer) wil, kan deze naar de winkel voor verder advies.
                     </Paragraph>
+                    <Paragraph>
+                        De app is geschreven met React in combinatie van Redux. De Bikebuilder/configurator heb ik gebouwd op een API
+                        geschreven door collega&#8217;s. De vele opties en afhankelijkheden zorgde voor een leuke uitdaging en een resultaat waar
+                        ik trots op ben.
+                    </Paragraph>
+                    <Paragraph isItalic>Welke kleur fiets kies jij?</Paragraph>
                     <Button
                         href="https://configurator.apexbikes.cc/"
                         target="_blank"
