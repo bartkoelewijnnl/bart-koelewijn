@@ -22,7 +22,11 @@ const Badge: FC<BadgeProps> = ({ color, lightColor, className, icon, title }) =>
             <Wrapper data-tip={title} className={className} backgroundColor={backgroundColor}>
                 <Icon name={icon} color={color} />
             </Wrapper>
-            <ReactTooltip effect="solid" backgroundColor={backgroundColor} textColor={color} />
+            <ReactTooltip
+                effect="solid"
+                backgroundColor={backgroundColor}
+                textColor={getColor(theme.colors, color, theme.colors.lightBlue)}
+            />
         </>
     );
 };
