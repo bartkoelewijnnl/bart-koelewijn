@@ -13,6 +13,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useThemeContext } from 'providers/ThemeProvider';
 import { Container, Row, Col } from 'react-grid-system';
+import ContainerTest from 'components/Container';
 
 const Home: NextPage = () => {
     const { isDark, setIsDark } = useThemeContext();
@@ -24,8 +25,9 @@ const Home: NextPage = () => {
                 <meta name="description" content="Front-end Developer met gevoel voor design" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {/* <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} /> */}
+            <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} />
             <Intro>
+                <ContainerTest>sdf</ContainerTest>
                 <Container>
                     <Row>
                         <Col
@@ -72,7 +74,7 @@ const Home: NextPage = () => {
                         Native Animated&apos;.
                     </Paragraph>
                     <Paragraph isItalic>Denk jij de hoogste score te halen, test je kennis hiernaast of download de app.</Paragraph>
-                    <Margin bottom={3.5}>
+                    <Margin bottom={7}>
                         <Group>
                             <Badge title="SVG" icon="svg" color="blue" lightColor="lightBlue" />
                             <Badge title="Formik" icon="formik" color="blue" lightColor="lightBlue" />
@@ -130,9 +132,7 @@ const Home: NextPage = () => {
                         Bezoek Cycle Center
                     </Button>
                 </SectionCycleCenter>
-                <SectionCareer title="Carrière">
-                    <Paragraph>Een leuk idee, nieuwsgierig of gewoon een vraag?</Paragraph>
-                </SectionCareer>
+                <SectionCareer title="Carrière" />
             </Container>
         </>
     );

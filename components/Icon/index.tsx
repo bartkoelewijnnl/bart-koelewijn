@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useTheme } from '@emotion/react';
+import classNames from 'classnames';
 
 interface IconProps {
     size?: number;
@@ -167,12 +168,9 @@ export const getColor = (colors: { [key: string]: any }, color: string, defaultC
 };
 
 const Icon: FC<IconProps> = ({ size = 1.5, color = 'primary', name, className }) => {
-    const theme = useTheme();
-
     return (
         <svg
-            className={className}
-            fill={getColor(theme.colors, color, theme.colors.primary)}
+            className={classNames(`icon--${color}`, className)}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
             style={{ flex: `0 0 ${size}rem` }}

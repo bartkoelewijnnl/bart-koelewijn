@@ -1,0 +1,16 @@
+.skills {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 0.5rem;
+    background-color: $white;
+    position: absolute;
+    left: -2rem;
+    bottom: -2rem;
+    box-shadow: -5px 10px 20px rgba($primary, 0.2);
+    display: grid;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}

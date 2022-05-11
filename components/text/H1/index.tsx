@@ -1,23 +1,12 @@
-import React, { FC, useMemo } from 'react';
-import { H1 as Text } from './styles';
-import { Colors } from 'theme';
-import { useTheme } from '@emotion/react';
-import { getColor } from 'components/Icon';
+import React, { FC } from 'react';
+import classNames from 'classnames';
 
 export interface ParagraphProps {
-    variant?: keyof Colors;
     className?: string;
 }
 
-const H1: FC<ParagraphProps> = ({ children, variant = 'primary', className }) => {
-    const theme = useTheme();
-    const color = getColor(theme.colors, variant, theme.colors.primary);
-
-    return (
-        <Text color={color} className={className}>
-            {children}
-        </Text>
-    );
+const H1: FC<ParagraphProps> = ({ children, className }) => {
+    return <h1 className={classNames('h1', className)}>{children}</h1>;
 };
 
 export default H1;

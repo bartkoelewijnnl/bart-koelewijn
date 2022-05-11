@@ -1,8 +1,6 @@
-import React, { FC, useMemo } from 'react';
-import { Paragraph as Text } from './styles';
+import React, { FC } from 'react';
 import { Colors } from 'theme';
-import { useTheme } from '@emotion/react';
-import { getColor } from 'components/Icon';
+import classNames from 'classnames';
 
 export interface ParagraphProps {
     variant?: keyof Colors;
@@ -11,15 +9,8 @@ export interface ParagraphProps {
     isItalic?: boolean;
 }
 
-const Paragraph: FC<ParagraphProps> = ({ children, variant = 'text', noMargin, isItalic, className }) => {
-    const theme = useTheme();
-    const color = getColor(theme.colors, variant, theme.colors.text);
-
-    return (
-        <Text color={color} noMargin={noMargin} isItalic={isItalic} className={className}>
-            {children}
-        </Text>
-    );
+const Paragraph: FC<ParagraphProps> = ({ children, noMargin, isItalic, className, variant = 'text' }) => {
+    return <p className={classNames('p', `p--${variant}`, { 'p--no-margin': noMargin, 'p--italic': isItalic }, className)}>{children}</p>;
 };
 
 export default Paragraph;

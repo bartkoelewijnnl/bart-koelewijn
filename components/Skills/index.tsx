@@ -1,7 +1,7 @@
 import Skill, { SkillProps } from 'components/Skill';
 import { FC } from 'react';
-import { Skills as Wrapper } from './styles';
 import { motion, Variants } from 'framer-motion';
+import styles from './Skills.module.scss';
 
 interface SkillsProps {}
 
@@ -25,15 +25,13 @@ const skills: SkillProps[] = [
 
 const Skills: FC<SkillsProps> = () => {
     return (
-        <>
-            <Wrapper key="skills" variants={containerVariants} initial="initial" whileInView="animate">
-                {skills.map((skill, index) => (
-                    <motion.div key={index} variants={skillVariants}>
-                        <Skill {...skill} />
-                    </motion.div>
-                ))}
-            </Wrapper>
-        </>
+        <motion.div className={styles.skills} key="skills" variants={containerVariants} initial="initial" whileInView="animate">
+            {skills.map((skill, index) => (
+                <motion.div key={index} variants={skillVariants}>
+                    <Skill {...skill} />
+                </motion.div>
+            ))}
+        </motion.div>
     );
 };
 

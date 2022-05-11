@@ -1,18 +1,16 @@
 import Icon, { Icons } from 'components/Icon';
 import { FC } from 'react';
-import { Skill as Wrapper } from './styles';
-import { Variants } from 'framer-motion';
+import styles from './Skill.module.scss';
 
 export interface SkillProps {
     icon: keyof Icons;
-    className?: string;
 }
 
-const Skill: FC<SkillProps> = ({ icon, className, ...props }) => {
+const Skill: FC<SkillProps> = ({ icon, ...props }) => {
     return (
-        <Wrapper className={className} {...props}>
+        <div className={styles.skill} {...props}>
             <Icon name={icon} />
-        </Wrapper>
+        </div>
     );
 };
 

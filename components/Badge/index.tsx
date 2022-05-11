@@ -2,8 +2,7 @@ import { useTheme } from '@emotion/react';
 import Icon, { Icons, getColor } from 'components/Icon';
 import { FC } from 'react';
 import { Colors } from 'theme';
-import { Badge as Wrapper } from './styles';
-import ReactTooltip from 'react-tooltip';
+import classNames from 'classnames';
 
 export interface BadgeProps {
     color: keyof Colors;
@@ -13,21 +12,11 @@ export interface BadgeProps {
     title: string;
 }
 
-const Badge: FC<BadgeProps> = ({ color, lightColor, className, icon, title }) => {
-    const theme = useTheme();
-    const backgroundColor = getColor(theme.colors, lightColor, theme.colors.lightBlue);
-
+const Badge: FC<BadgeProps> = ({ color, lightColor, icon, title }) => {
     return (
-        <>
-            <Wrapper data-tip={title} className={className} backgroundColor={backgroundColor}>
-                <Icon name={icon} color={color} />
-            </Wrapper>
-            <ReactTooltip
-                effect="solid"
-                backgroundColor={backgroundColor}
-                textColor={getColor(theme.colors, color, theme.colors.lightBlue)}
-            />
-        </>
+        <div data-tip={title} className={classNames('badge', `badge--${lightColor}`)}>
+            <Icon name={icon} color={color} />
+        </div>
     );
 };
 

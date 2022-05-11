@@ -18,7 +18,7 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
     const [isGlossy, setIsGlossy] = useState<boolean>(true);
 
     return (
-        <Margin bottom={7.5}>
+        <Margin bottom={15}>
             <Row>
                 <Col
                     xs={12}
@@ -49,7 +49,7 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                 >
                     <Content>
                         <Hidden xs sm>
-                            <Margin right={4}>
+                            <Margin right={8}>
                                 <Group>
                                     {badges.map((badge, index) => (
                                         <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />

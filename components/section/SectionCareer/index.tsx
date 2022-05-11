@@ -13,9 +13,8 @@ interface SectionCareerProps {
 const MAX_YEAR = 2022;
 const MIN_YEAR = 2017;
 
-const SectionCareer: FC<SectionCareerProps> = ({ title, children }) => {
+const SectionCareer: FC<SectionCareerProps> = ({ title }) => {
     // Render.
-
     return (
         <>
             <H2>{title}</H2>
@@ -27,7 +26,7 @@ const SectionCareer: FC<SectionCareerProps> = ({ title, children }) => {
                     <Item title="Junior tester" company="Kodision" height={1} columnStart={1} />
                     <Lines minYear={MIN_YEAR} maxYear={MAX_YEAR} />
                 </Content>
-                <Margin bottom={1}>
+                <Margin bottom={2}>
                     <Button href="https://www.linkedin.com/in/bart-koelewijn-ba1424b7/" target="_blank" icon="link" isWhite>
                         LinkedIn
                     </Button>

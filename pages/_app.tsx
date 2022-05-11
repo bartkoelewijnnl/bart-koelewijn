@@ -4,8 +4,12 @@ import ThemeProvider from 'providers/ThemeProvider';
 import { ScreenClassProvider, setConfiguration, ScreenClassRender, ScreenClass } from 'react-grid-system';
 import { BREAKPOINTS } from 'utils/breakpoint';
 import styles from '../styles/styles';
+import '../styles/styles.scss';
+// import variables from '../styles/variables.module.scss';
 
 const App = ({ Component, pageProps }: AppProps) => {
+    // console.log({ variables });
+
     setConfiguration({
         gutterWidth: 0,
         breakpoints: BREAKPOINTS,

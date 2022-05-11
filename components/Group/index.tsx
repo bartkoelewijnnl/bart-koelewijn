@@ -1,15 +1,13 @@
+import classNames from 'classnames';
 import React, { FC } from 'react';
-import { Group as Wrapper } from './styles';
 
 export interface GroupProps {
-    spaceBetween?: boolean;
-    right?: boolean;
     className?: string;
     isLarge?: boolean;
 }
 
-const Group: FC<GroupProps> = ({ children, ...props }) => {
-    return <Wrapper {...props}>{children}</Wrapper>;
+const Group: FC<GroupProps> = ({ children, isLarge, className }) => {
+    return <div className={classNames('group', { 'group--large': isLarge }, className)}>{children}</div>;
 };
 
 export default Group;

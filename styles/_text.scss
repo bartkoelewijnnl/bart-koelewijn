@@ -1,0 +1,29 @@
+.h1 {
+    color: $primary;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+.p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-style: normal;
+
+    &--no-margin {
+        margin-bottom: 0;
+    }
+
+    &--italic {
+        font-style: italic;
+    }
+}
+
+@each $color, $value in $colors {
+    .p--#{$color} {
+        color: $value;
+    }
+}

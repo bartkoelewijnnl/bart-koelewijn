@@ -1,0 +1,52 @@
+@mixin generate-utility($utility) {
+    $values: map-get($utility, values);
+
+    @each $key, $value in $values {
+        $properties: map-get($utility, property);
+
+        @if type-of($properties) == "string" {
+            $properties: append((), $properties);
+        }
+
+        $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
+
+        @if $value != null {
+            .#{$property-class + "--" + $key} {
+                @each $property in $properties {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
+}
+
+$utilities: (
+    "margin-bottom": (
+        responsive: true,
+        property: margin-bottom,
+        class: mb,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    "margin-right": (
+        responsive: true,
+        property: margin-right,
+        class: mr,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+);
+
+@each $key, $utility in $utilities {
+    @include generate-utility($utility);
+}

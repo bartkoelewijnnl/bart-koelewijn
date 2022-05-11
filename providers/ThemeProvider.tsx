@@ -12,13 +12,12 @@ const getInitialTheme = (): boolean => {
 
     const themePreference = window.localStorage.getItem('theme');
 
-    // If the user has explicitly chosen light or dark, let's use it.
-    // Otherwise, this value will be null.
+    // If the user has explicitly chosen light or dark, use it.
     if (typeof themePreference === 'string' && (themePreference === KEY_LIGHT || themePreference === KEY_DARK)) {
         return themePreference === KEY_DARK;
     }
 
-    // If they haven't been explicit, let's check the media query
+    // If they haven't been explicit, check the media query
     const mql = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (typeof mql.matches === 'boolean') {
@@ -57,8 +56,8 @@ const ThemeProvider: FC = ({ children }) => {
     // Render.
     return (
         <ThemeContext.Provider value={{ isDark, setIsDark: handleOnThemeChange }}>
-            {/* <EmotionThemeProvider theme={isDark ? ThemeDark : ThemeLight}>{children}</EmotionThemeProvider> */}
-            <EmotionThemeProvider theme={ThemeLight}>{children}</EmotionThemeProvider>
+            <EmotionThemeProvider theme={isDark ? ThemeDark : ThemeLight}>{children}</EmotionThemeProvider>
+            {/* <EmotionThemeProvider theme={ThemeLight}>{children}</EmotionThemeProvider> */}
         </ThemeContext.Provider>
     );
 };
