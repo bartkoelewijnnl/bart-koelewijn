@@ -1,15 +1,10 @@
-import { Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import ThemeProvider from 'providers/ThemeProvider';
-import { ScreenClassProvider, setConfiguration, ScreenClassRender, ScreenClass } from 'react-grid-system';
+import { ScreenClassProvider, setConfiguration } from 'react-grid-system';
 import { BREAKPOINTS } from 'utils/breakpoint';
-import styles from '../styles/styles';
 import '../styles/styles.scss';
-// import variables from '../styles/variables.module.scss';
 
 const App = ({ Component, pageProps }: AppProps) => {
-    // console.log({ variables });
-
     setConfiguration({
         gutterWidth: 0,
         breakpoints: BREAKPOINTS,
@@ -19,7 +14,6 @@ const App = ({ Component, pageProps }: AppProps) => {
     return (
         <ThemeProvider>
             <ScreenClassProvider>
-                <Global styles={styles} />
                 <Component {...pageProps} />
             </ScreenClassProvider>
         </ThemeProvider>

@@ -1,25 +1,3 @@
-@mixin generate-utility($utility) {
-    $values: map-get($utility, values);
-
-    @each $key, $value in $values {
-        $properties: map-get($utility, property);
-
-        @if type-of($properties) == "string" {
-            $properties: append((), $properties);
-        }
-
-        $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
-
-        @if $value != null {
-            .#{$property-class + "--" + $key} {
-                @each $property in $properties {
-                    #{$property}: $value;
-                }
-            }
-        }
-    }
-}
-
 $utilities: (
     "margin-bottom": (
         responsive: true,

@@ -1,7 +1,7 @@
 import Icon from 'components/Icon';
 import { Form, Formik, FormikHelpers } from 'formik';
 import { FC } from 'react';
-import { Col } from 'react-grid-system';
+import { Col } from 'components/grid';
 import { SectionProps } from '..';
 import Answer from './components/Answer';
 import Gauge from './components/Gauge';

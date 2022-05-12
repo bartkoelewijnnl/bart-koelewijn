@@ -1,6 +1,7 @@
 $primary: #ee3b53;
 $button: #ef5367;
 $white: #ffffff;
+$black: #000000;
 $text: #a5a5a5;
 $blue: #a7abfa;
 $lightBlue: #f2f2ff;
@@ -13,6 +14,7 @@ $dot: #e0e0e0;
 $colors: (
     "primary": $primary,
     "white": $white,
+    "black": $black,
     "text": $text,
     "blue": $blue,
     "lightBlue": $lightBlue,
@@ -46,6 +48,7 @@ $spacers: (
 );
 
 // Grid.
+$grid-columns: 12;
 $grid-breakpoints: (
     xs: 0,
     sm: 768px,
@@ -55,6 +58,7 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
+    xs: 576px,
     sm: 576px,
     md: 768px,
     lg: 992px,

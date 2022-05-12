@@ -2,7 +2,7 @@ import Badge, { BadgeProps } from 'components/Badge';
 import Group from 'components/Group';
 import Margin from 'components/Margin';
 import { FC, useState } from 'react';
-import { Col, Hidden, Row } from 'react-grid-system';
+import { Col, Row } from 'components/grid';
 import { SectionProps } from '..';
 import { Content, Background, Side, Category, BikeContent, Card } from './styles';
 import ColorPicker, { COLORS } from './components/ColorPicker';
@@ -48,15 +48,15 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                     }}
                 >
                     <Content>
-                        <Hidden xs sm>
-                            <Margin right={8}>
-                                <Group>
-                                    {badges.map((badge, index) => (
-                                        <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
-                                    ))}
-                                </Group>
-                            </Margin>
-                        </Hidden>
+                        {/* <Hidden xs sm> */}
+                        <Margin right={8}>
+                            <Group>
+                                {badges.map((badge, index) => (
+                                    <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
+                                ))}
+                            </Group>
+                        </Margin>
+                        {/* </Hidden> */}
                         <Card {...card} />
                     </Content>
                     <Background>

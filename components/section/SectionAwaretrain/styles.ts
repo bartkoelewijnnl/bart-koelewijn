@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import CardComponent from 'components/Card';
 import { motion } from 'framer-motion';
 import { rgba } from 'polished';
-import { Row } from 'react-grid-system';
+import { Row } from 'components/grid';
 import { maxWidthBreakpoint } from 'utils/breakpoint';
 import { prefix } from 'utils/prefix';
 import isPropValid from '@emotion/is-prop-valid';

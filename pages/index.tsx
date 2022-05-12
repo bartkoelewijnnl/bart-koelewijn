@@ -12,8 +12,7 @@ import { H1, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useThemeContext } from 'providers/ThemeProvider';
-import { Container, Row, Col } from 'react-grid-system';
-import ContainerTest from 'components/Container';
+import { Container, Row, Col } from 'components/grid';
 
 const Home: NextPage = () => {
     const { isDark, setIsDark } = useThemeContext();
@@ -27,7 +26,6 @@ const Home: NextPage = () => {
             </Head>
             <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} />
             <Intro>
-                <ContainerTest>sdf</ContainerTest>
                 <Container>
                     <Row>
                         <Col

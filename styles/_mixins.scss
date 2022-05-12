@@ -1,3 +1,27 @@
+@use "sass:math";
+
+@mixin generate-utility($utility) {
+    $values: map-get($utility, values);
+
+    @each $key, $value in $values {
+        $properties: map-get($utility, property);
+
+        @if type-of($properties) == "string" {
+            $properties: append((), $properties);
+        }
+
+        $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
+
+        @if $value != null {
+            .#{$property-class + "--" + $key} {
+                @each $property in $properties {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
+}
+
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
     $min: map-get($breakpoints, $name);
     @return if($min != 0, $min, null);
@@ -12,5 +36,48 @@
         }
     } @else {
         @content;
+    }
+}
+
+@mixin row-cols($count) {
+    > * {
+        flex: 0 0 auto;
+        width: divide(100%, $count);
+    }
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints) == null, "", "--#{$name}");
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+    flex: 0 0 auto;
+    width: math.percentage(math.div($size, $columns));
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+    $num: math.div($size, $columns);
+    margin-left: if($num == 0, 0, math.percentage($num));
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            @for $i from 1 through $columns {
+                .col#{$infix}--#{$i} {
+                    @include make-col($i, $columns);
+                }
+            }
+
+            @for $i from 0 through ($columns - 1) {
+                @if not($infix == "" and $i == 0) {
+                    .col__offset#{$infix}--#{$i} {
+                        @include make-col-offset($i, $columns);
+                    }
+                }
+            }
+        }
     }
 }
