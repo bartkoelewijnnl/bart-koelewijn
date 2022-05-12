@@ -31,9 +31,3 @@
         font-style: italic;
     }
 }
-
-@each $color, $value in $colors {
-    .p--#{$color} {
-        color: $value;
-    }
-}

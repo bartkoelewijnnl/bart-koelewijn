@@ -10,7 +10,9 @@ export interface ParagraphProps {
 }
 
 const Paragraph: FC<ParagraphProps> = ({ children, noMargin, isItalic, className, variant = 'text' }) => {
-    return <p className={classNames('p', `p--${variant}`, { 'p--no-margin': noMargin, 'p--italic': isItalic }, className)}>{children}</p>;
+    return (
+        <p className={classNames('p', `color--${variant}`, { 'p--no-margin': noMargin, 'p--italic': isItalic }, className)}>{children}</p>
+    );
 };
 
 export default Paragraph;

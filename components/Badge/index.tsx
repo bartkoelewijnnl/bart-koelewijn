@@ -14,7 +14,7 @@ export interface BadgeProps {
 
 const Badge: FC<BadgeProps> = ({ color, lightColor, icon, title }) => {
     return (
-        <div data-tip={title} className={classNames('badge', `badge--${lightColor}`, `badge--text--${color}`)}>
+        <div data-tip={title} className={classNames('badge', `bg--${lightColor}`, `color--${color}`)}>
             <Icon name={icon} color={color} />
         </div>
     );

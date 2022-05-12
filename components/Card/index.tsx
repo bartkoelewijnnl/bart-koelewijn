@@ -14,7 +14,7 @@ export interface CardProps {
 
 const Card: FC<CardProps> = ({ title, subtitle, variant, lightVariant, className }) => {
     return (
-        <div className={classNames('card', `card--${lightVariant}`, className)}>
+        <div className={classNames('card', `bg--${lightVariant}`, className)}>
             <H3 variant={variant}>{title}</H3>
             <Paragraph variant={variant} noMargin>
                 {subtitle}
