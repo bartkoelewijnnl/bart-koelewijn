@@ -1,5 +1,4 @@
-import { useTheme } from '@emotion/react';
-import Icon, { Icons, getColor } from 'components/Icon';
+import Icon, { Icons } from 'components/Icon';
 import { FC } from 'react';
 import { Colors } from 'theme';
 import classNames from 'classnames';

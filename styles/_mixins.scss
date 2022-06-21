@@ -3,6 +3,10 @@
 @mixin generate-utility($utility) {
     $values: map-get($utility, values);
 
+    @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
+        $values: zip($values, $values);
+    }
+
     @each $key, $value in $values {
         $properties: map-get($utility, property);
 

@@ -11,7 +11,7 @@ interface ScreenClasses {
 
 export interface ColProps extends ScreenClasses {
     offset?: ScreenClasses;
-    order?: ScreenClasses;
+    order?: ScreenClasses; // TODO: order functional.
 }
 
 const getSceenClasses = (prefix: string, screenClasses?: ScreenClasses): string[] => {

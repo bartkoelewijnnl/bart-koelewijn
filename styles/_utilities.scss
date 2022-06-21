@@ -1,6 +1,5 @@
 $utilities: (
     "margin-bottom": (
-        responsive: true,
         property: margin-bottom,
         class: mb,
         values:
@@ -12,7 +11,6 @@ $utilities: (
             ),
     ),
     "margin-right": (
-        responsive: true,
         property: margin-right,
         class: mr,
         values:
@@ -22,6 +20,10 @@ $utilities: (
                     auto: auto,
                 )
             ),
+    ),
+    "position": (
+        property: position,
+        values: static relative absolute,
     ),
 );
 

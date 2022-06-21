@@ -32,10 +32,6 @@ input {
 @import "container";
 @import "grid";
 
-
-
-
-
 @mixin make-col($size: false) {
     @if $size {
         flex: 0 0 auto;
@@ -67,6 +63,7 @@ input {
     }
 }
 
+// Components
 .dots {
     width: 5rem;
     height: 5rem;
@@ -92,5 +89,9 @@ input {
     }
 }
 
-// Button
+.phone {
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+}
 
+// Button
