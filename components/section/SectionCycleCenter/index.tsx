@@ -4,10 +4,12 @@ import Margin from 'components/Margin';
 import { FC, useState } from 'react';
 import { Col, Row } from 'components/grid';
 import { SectionProps } from '..';
-import { Content, Background, Side, Category, BikeContent, Card } from './styles';
+import { Content } from './styles';
 import ColorPicker, { COLORS } from './components/ColorPicker';
 import Bike from './components/Bike';
 import FinishPicker from './components/FinishPicker';
+import Card from 'components/Card';
+import styles from './SectionCycleCenter.module.scss';
 
 interface SectionCycleCenterProps extends SectionProps {
     badges: Omit<BadgeProps, 'color' | 'lightColor'>[];
@@ -48,28 +50,28 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                     }}
                 >
                     <Content>
-                        {/* <Hidden xs sm> */}
-                        <Margin right={8}>
-                            <Group>
-                                {badges.map((badge, index) => (
-                                    <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
-                                ))}
-                            </Group>
-                        </Margin>
-                        {/* </Hidden> */}
-                        <Card {...card} />
+                        <div className={styles.hidden}>
+                            <Margin right={8}>
+                                <Group>
+                                    {badges.map((badge, index) => (
+                                        <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
+                                    ))}
+                                </Group>
+                            </Margin>
+                        </div>
+                        <Card className={styles.card} {...card} />
                     </Content>
-                    <Background>
-                        <BikeContent>
+                    <div className={styles['bike-wrapper__background']}>
+                        <div className={styles['bike-wrapper__content']}>
                             <Bike color={color} isGlossy={isGlossy} />
-                            <Side>
-                                <Category>Ontwerp</Category>
+                            <div>
+                                <span className={styles.category}>Ontwerp</span>
                                 <ColorPicker color={color} setColor={setColor} />
-                                <Category>Afwerking</Category>
+                                <span className={styles.category}>Afwerking</span>
                                 <FinishPicker isGlossy={isGlossy} setIsGlossy={setIsGlossy} />
-                            </Side>
-                        </BikeContent>
-                    </Background>
+                            </div>
+                        </div>
+                    </div>
                 </Col>
             </Row>
         </Margin>

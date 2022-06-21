@@ -1,0 +1,27 @@
+$text: #455a64;
+$active: #eceff1;
+
+.picker {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &__option {
+        list-style-type: none;
+        height: 3rem;
+        border-radius: 0.25rem;
+        display: inline-flex;
+        padding: 0 12px;
+        align-items: center;
+        color: $text;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--active {
+            background-color: $active;
+        }
+    }
+}

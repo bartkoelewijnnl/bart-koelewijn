@@ -1,0 +1,33 @@
+.picker {
+    background-color: $white;
+    width: 11.5rem;
+    padding: 1rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+
+    // TODO colors
+    &__color {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        background-color: red;
+        // background: ${({ color }) => `linear-gradient(45deg, ${color}, ${darken(0.2, color)})`};
+        border-radius: 0.5rem;
+        justify-content: center;
+        // border: ${({ isActive }) => (isActive ? '3px' : 0)} solid ${({ color }) => darken(0.1, color)};
+        transition: border 0.2s;
+
+        &:hover {
+            border-width: 3px;
+            cursor: pointer;
+        }
+    }
+}

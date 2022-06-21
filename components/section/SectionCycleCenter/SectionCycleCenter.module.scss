@@ -1,0 +1,57 @@
+@import "mixins";
+
+$background: #eaedef;
+$primary: #282f33;
+
+.hidden {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: static;
+    }
+}
+
+.card {
+    margin-right: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+        margin-right: 0;
+    }
+}
+
+.bike-wrapper {
+    &__background {
+        background-color: $background;
+        position: relative;
+        margin-right: 0;
+        border-radius: 1rem;
+        border-top-left-radius: 2.5rem;
+        padding: 2rem;
+
+        @include media-breakpoint-up(md) {
+            margin-right: 3.5rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-right: 3rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+}
+
+.category {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    color: rgba($primary, 0.3);
+}

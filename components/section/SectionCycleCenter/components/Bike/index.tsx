@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import { FrameColor, Overlay, Wrapper } from './styles';
 import BikeWheels from 'public/images/bike-wheels.png';
 import BikeSteer from 'public/images/bike-steer.png';
 import BikeGlossy from 'public/images/bike-glossy.png';
 import BikeMatt from 'public/images/bike-matt.png';
 import BikeGroupset from 'public/images/bike-groupset.png';
 import Image from 'next/image';
+import styles from './Bike.module.scss';
+import classNames from 'classnames';
 
 interface BikeProps {
     color: string;
@@ -14,22 +15,30 @@ interface BikeProps {
 
 const Bike: FC<BikeProps> = ({ color, isGlossy }) => {
     return (
-        <Wrapper>
+        <div className={styles.bike}>
             <Image src={BikeWheels} alt="Wielen van de geconfigureerde fiets" />
-            <FrameColor style={{ backgroundColor: color }} />
-            <Overlay>
+            <div className={styles['bike__frame']} style={{ backgroundColor: color }} />
+            <div className={styles['bike__overlay']}>
                 <Image src={BikeSteer} alt="Stuur van de geconfigureerde fiets" />
-            </Overlay>
-            <Overlay opacity={+!isGlossy}>
+            </div>
+            <div
+                className={classNames(styles['bike__overlay'], {
+                    [styles['bike__overlay--transparent']]: isGlossy
+                })}
+            >
                 <Image src={BikeMatt} alt="Afwerking van de geconfigureerde fiets" />
-            </Overlay>
-            <Overlay opacity={+isGlossy}>
+            </div>
+            <div
+                className={classNames(styles['bike__overlay'], {
+                    [styles['bike__overlay--transparent']]: !isGlossy
+                })}
+            >
                 <Image src={BikeGlossy} alt="Afwerking van de geconfigureerde fiets" />
-            </Overlay>
-            <Overlay>
+            </div>
+            <div className={styles['bike__overlay']}>
                 <Image src={BikeGroupset} alt="Groepset van de geconfigureerde fiets" />
-            </Overlay>
-        </Wrapper>
+            </div>
+        </div>
     );
 };
 

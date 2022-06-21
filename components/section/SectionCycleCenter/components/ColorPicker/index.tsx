@@ -1,8 +1,7 @@
-import { useTheme } from '@emotion/react';
 import { FC } from 'react';
-import Color from '../Color';
-import { Picker } from './styles';
+import styles from './ColorPicker.module.scss';
 
+// TODO: maybe in css vars?
 export const COLORS: string[] = [
     '#CEFF00',
     '#CBBBA0',
@@ -24,18 +23,20 @@ interface ColorPickerProps {
 }
 
 const ColorPicker: FC<ColorPickerProps> = ({ color = COLORS[0], setColor }) => {
+    // Methods.
     const handleOnColorClick = (color: string) => {
         setColor(color);
     };
 
     return (
-        <Picker>
+        <div className={styles.picker}>
             {COLORS.map((c) => {
                 const isActive = c === color;
 
-                return <Color isActive={isActive} onClick={() => handleOnColorClick(c)} key={c} color={c} />;
+                return <div key={c} className={styles['picker__color']} />;
+                // return <Color isActive={isActive} onClick={() => handleOnColorClick(c)} key={c} color={c} />;
             })}
-        </Picker>
+        </div>
     );
 };
 
