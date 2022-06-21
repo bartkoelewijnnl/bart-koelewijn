@@ -1,0 +1,19 @@
+.wrapper {
+    height: 1rem;
+    width: 100%;
+    margin-bottom: 6.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    opacity: 0.5;
+}
+
+.year {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: $white;
+    width: 3rem;
+}

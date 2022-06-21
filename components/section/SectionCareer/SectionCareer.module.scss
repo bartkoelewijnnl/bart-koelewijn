@@ -1,8 +1,5 @@
-import styled from '@emotion/styled';
-import { rgba } from 'polished';
-
-export const Phone = styled.div`
-    background-color: ${({ theme }) => theme.colors.button};
+.phone {
+    background-color: $button;
     border-radius: 2.5rem;
     padding: 3rem 2rem 0;
     display: flex;
@@ -14,19 +11,19 @@ export const Phone = styled.div`
     padding-bottom: 2rem;
 
     &:before {
-        content: '';
+        content: "";
         top: 0;
         left: 30%;
         height: 1.5rem;
         position: absolute;
         width: 40%;
-        background-color: ${({ theme }) => rgba(theme.colors.white, 0.25)};
+        background-color: rgba($white, 0.25);
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }
-`;
+}
 
-export const Content = styled.div`
+.content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -40,4 +37,4 @@ export const Content = styled.div`
     grid-template-rows: repeat(6, 6.5rem);
     column-gap: 0.5rem;
     row-gap: 1rem;
-`;
+}

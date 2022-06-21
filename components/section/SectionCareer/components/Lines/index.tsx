@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Line from '../Line';
-import { Wrapper } from './styles';
+import styles from './Lines.module.scss';
 
 interface LinesProps {
     maxYear: number;
@@ -12,13 +12,13 @@ const Lines: FC<LinesProps> = ({ maxYear, minYear }) => {
     const numberOfYears = maxYear - minYear;
 
     return (
-        <Wrapper>
+        <div className={styles.lines}>
             {Array.from(Array(numberOfYears + 1).keys()).map((index) => {
                 const year = maxYear - index;
 
                 return <Line year={year} key={index} />;
             })}
-        </Wrapper>
+        </div>
     );
 };
 
