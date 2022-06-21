@@ -1,12 +1,12 @@
 import Icon from 'components/Icon';
 import { Form, Formik, FormikHelpers } from 'formik';
 import { FC } from 'react';
-import { Col } from 'components/grid';
+import { Col, Row } from 'components/grid';
 import { SectionProps } from '..';
 import Answer from './components/Answer';
 import Gauge from './components/Gauge';
 import Logo from './components/Logo';
-import { Card, Section, PhoneCardWrapper } from './styles';
+import { Card, PhoneCardWrapper } from './styles';
 import { AnimatePresence, LayoutGroup, Variants } from 'framer-motion';
 import { Element } from 'react-scroll';
 import styles from './SectionAwaretrain.module.scss';
@@ -131,7 +131,7 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
 
     return (
         <Element id="awaretrain" name="awaretrain">
-            <Section>
+            <Row className={styles.section}>
                 <Col
                     xs={12}
                     sm={12}
@@ -270,7 +270,7 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
                 >
                     {children}
                 </Col>
-            </Section>
+            </Row>
         </Element>
     );
 };

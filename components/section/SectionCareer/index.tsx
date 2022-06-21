@@ -20,6 +20,7 @@ const SectionCareer: FC<SectionCareerProps> = ({ title }) => {
             <H2>{title}</H2>
             <Phone>
                 <Content>
+                    {/* <Item title="Front-end developer" company="EF2" height={1} width={1} columnStart={1} /> */}
                     <Item title="Front-end developer" company="Bluenotion" height={3} width={1} columnStart={1} />
                     <Item title="HBO-ICT" company="Hogeschool van Arnhem en Nijmegen (HAN)" height={4} rowStart={3} columnStart={2} />
                     <Item title="Front-end developer" company="Sportunity" height={2} columnStart={1} />

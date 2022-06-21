@@ -7,7 +7,7 @@ $primary: #282f33;
     display: none;
 
     @include media-breakpoint-up(md) {
-        display: static;
+        display: block;
     }
 }
 

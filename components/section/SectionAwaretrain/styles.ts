@@ -1,19 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import CardComponent from 'components/Card';
-import { Row } from 'components/grid';
 import { maxWidthBreakpoint } from 'utils/breakpoint';
-
-export const Section = styled(Row)`
-    margin-bottom: 7.5rem;
-
-    ${maxWidthBreakpoint(
-        'sm',
-        css`
-            margin-bottom: 5rem;
-        `
-    )}
-`;
 
 export const PhoneCardWrapper = styled.div`
     ${maxWidthBreakpoint(

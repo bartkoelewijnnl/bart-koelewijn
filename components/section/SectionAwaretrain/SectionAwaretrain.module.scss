@@ -1,5 +1,15 @@
+@import "mixins";
+
 $primary: #4a72dd;
 $dark: #212749;
+
+.section {
+    margin-bottom: 5rem;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 7.5rem;
+    }
+}
 
 .phone {
     margin-right: 3rem;
