@@ -4,7 +4,6 @@ import Margin from 'components/Margin';
 import { FC, useState } from 'react';
 import { Col, Row } from 'components/grid';
 import { SectionProps } from '..';
-import { Content } from './styles';
 import ColorPicker, { COLORS } from './components/ColorPicker';
 import Bike from './components/Bike';
 import FinishPicker from './components/FinishPicker';
@@ -49,7 +48,7 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                         lg: 2
                     }}
                 >
-                    <Content>
+                    <div className={styles.content}>
                         <div className={styles.hidden}>
                             <Margin right={8}>
                                 <Group>
@@ -60,7 +59,7 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                             </Margin>
                         </div>
                         <Card className={styles.card} {...card} />
-                    </Content>
+                    </div>
                     <div className={styles['bike-wrapper__background']}>
                         <div className={styles['bike-wrapper__content']}>
                             <Bike color={color} isGlossy={isGlossy} />

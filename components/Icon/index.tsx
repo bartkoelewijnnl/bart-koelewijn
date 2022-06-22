@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { useTheme } from '@emotion/react';
 import classNames from 'classnames';
 
 interface IconProps {

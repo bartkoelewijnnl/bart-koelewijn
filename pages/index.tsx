@@ -13,7 +13,6 @@ import { Container, Row, Col } from 'components/grid';
 import styles from './Home.module.scss';
 
 const Home: NextPage = () => {
-    // const { isDark, setIsDark } = useThemeContext();
 
     return (
         <>
@@ -22,7 +21,6 @@ const Home: NextPage = () => {
                 <meta name="description" content="Front-end Developer met gevoel voor design" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {/* <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} /> */}
             <div className={styles.intro}>
                 <Container>
                     <Row>

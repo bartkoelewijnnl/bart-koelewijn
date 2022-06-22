@@ -3,6 +3,10 @@
 $background: #eaedef;
 $primary: #282f33;
 
+.content {
+    display: flex;
+}
+
 .hidden {
     display: none;
 

@@ -6,12 +6,12 @@ import { SectionProps } from '..';
 import Answer from './components/Answer';
 import Gauge from './components/Gauge';
 import Logo from './components/Logo';
-import { Card, PhoneCardWrapper } from './styles';
 import { AnimatePresence, LayoutGroup, Variants } from 'framer-motion';
 import { Element } from 'react-scroll';
-import styles from './SectionAwaretrain.module.scss';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
+import styles from './SectionAwaretrain.module.scss';
+import Card from 'components/Card';
 
 interface Answer {
     id: string;
@@ -144,8 +144,8 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
                         xl: 1
                     }}
                 >
-                    <PhoneCardWrapper>
-                        <Card {...card} />
+                    <div className={styles['phone-card']}>
+                        <Card className={styles.card} {...card} />
                         <div className="position--relative">
                             <AnimatePresence>
                                 <LayoutGroup>
@@ -254,7 +254,7 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
                                 </LayoutGroup>
                             </AnimatePresence>
                         </div>
-                    </PhoneCardWrapper>
+                    </div>
                 </Col>
                 <Col
                     xs={12}

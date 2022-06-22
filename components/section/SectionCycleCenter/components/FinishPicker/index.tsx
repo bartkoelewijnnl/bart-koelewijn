@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Option, Picker } from './styles';
 import styles from './FinishPicker.module.scss';
 import classNames from 'classnames';
 

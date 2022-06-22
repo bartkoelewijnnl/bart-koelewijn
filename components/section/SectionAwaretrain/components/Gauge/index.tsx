@@ -1,6 +1,5 @@
-import { useTheme } from '@emotion/react';
 import { motion, Transition, Variants } from 'framer-motion';
-import { FC, useMemo } from 'react';
+import { FC } from 'react';
 
 const OFFSET = 12;
 const RADIUS = 104;
@@ -15,8 +14,6 @@ interface GaugeProps {
 const transition: Transition = { type: 'spring', stiffness: 60 };
 
 const Gauge: FC<GaugeProps> = ({ value, max }) => {
-    const theme = useTheme();
-
     // Render.
     const center = OFFSET + RADIUS;
     const innerRadius = RADIUS - STROKE_WIDTH / 2;
@@ -41,13 +38,15 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
 
     return (
         <motion.svg layout style={{ zIndex: 1 }} height={OFFSET * 2 + RADIUS * 2} width={OFFSET * 2 + RADIUS * 2}>
-            <circle cx={center} cy={center} fill={theme.colors.awaretrain.primary} r={center} />
+            {/* <circle cx={center} cy={center} fill={theme.colors.awaretrain.primary} r={center} /> */}
+            <circle cx={center} cy={center} fill="red" r={center} />
             <circle
                 cx={center}
                 cy={center}
                 fill="transparent"
                 r={innerRadius}
-                stroke={`${theme.colors.awaretrain.white}20`}
+                // stroke={`${theme.colors.awaretrain.white}20`}
+                stroke="red"
                 strokeWidth={STROKE_WIDTH}
                 strokeDasharray={dashArray}
                 transform={transform}
@@ -58,7 +57,8 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
                 transition={transition}
                 fill="transparent"
                 r={innerRadius}
-                stroke={theme.colors.awaretrain.active}
+                // stroke={theme.colors.awaretrain.active}
+                stroke="red"
                 strokeWidth={STROKE_WIDTH}
                 strokeDasharray={dashArray}
                 transform={transform}
@@ -74,10 +74,10 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
                 initial="initial"
                 animate="animate"
             >
-                <circle cx={center} cy={center} r={16} fill={`${theme.colors.awaretrain.white}20`} />
+                {/* <circle cx={center} cy={center} r={16} fill={`${theme.colors.awaretrain.white}20`} />
                 <circle cx={center} cy={center} r={9} fill={theme.colors.awaretrain.white} />
                 <polygon points={`${center},0 ${center + 9},${center} ${center + -9},${center}`} fill={theme.colors.awaretrain.white} />
-                <circle cx={center} cy={center} r={4} fill={theme.colors.awaretrain.primary} />
+                <circle cx={center} cy={center} r={4} fill={theme.colors.awaretrain.primary} /> */}
             </motion.g>
         </motion.svg>
     );
