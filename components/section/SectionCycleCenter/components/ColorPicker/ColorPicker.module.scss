@@ -9,7 +9,6 @@
     align-self: flex-start;
     margin-bottom: 1.5rem;
 
-    // TODO colors
     &__color {
         position: relative;
         width: 2rem;
@@ -18,11 +17,8 @@
         margin-bottom: 0.5rem;
         display: flex;
         align-items: center;
-        background-color: red;
-        // background: ${({ color }) => `linear-gradient(45deg, ${color}, ${darken(0.2, color)})`};
         border-radius: 0.5rem;
         justify-content: center;
-        // border: ${({ isActive }) => (isActive ? '3px' : 0)} solid ${({ color }) => darken(0.1, color)};
         transition: border 0.2s;
 
         &:hover {

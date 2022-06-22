@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import { FC } from 'react';
 import styles from './ColorPicker.module.scss';
 
@@ -33,8 +34,17 @@ const ColorPicker: FC<ColorPickerProps> = ({ color = COLORS[0], setColor }) => {
             {COLORS.map((c) => {
                 const isActive = c === color;
 
-                return <div key={c} className={styles['picker__color']} />;
-                // return <Color isActive={isActive} onClick={() => handleOnColorClick(c)} key={c} color={c} />;
+                return (
+                    <div
+                        key={c}
+                        style={{
+                            background: `linear-gradient(45deg, ${c}, ${darken(0.2, c)})`,
+                            border: `${isActive ? '3px' : 0} solid ${darken(0.1, c)}`
+                        }}
+                        className={styles['picker__color']}
+                        onClick={() => handleOnColorClick(c)}
+                    />
+                );
             })}
         </div>
     );
