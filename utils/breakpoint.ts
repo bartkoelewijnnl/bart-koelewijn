@@ -1,6 +1,5 @@
 import { ScreenClass, ScreenClassProvider } from 'react-grid-system';
 import { css, SerializedStyles } from '@emotion/react';
-import styled from '@emotion/styled/types/base';
 
 export const BREAKPOINTS = [768, 992, 1200, 1440, 1440];
 export const SCREEN_CLASSESS: ScreenClass[] = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];

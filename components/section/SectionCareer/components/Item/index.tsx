@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Wrapper, Title, Company } from './styles';
+import styles from './Item.module.scss';
 
 export interface ItemProps {
     title: string;
@@ -12,10 +12,18 @@ export interface ItemProps {
 
 const Item: FC<ItemProps> = ({ width, height, company, columnStart, rowStart, title }) => {
     return (
-        <Wrapper width={width} height={height} columnStart={columnStart} rowStart={rowStart}>
-            <Title>{title}</Title>
-            <Company>{company}</Company>
-        </Wrapper>
+        <div
+            className={styles.item}
+            style={{
+                gridRowStart: rowStart,
+                gridRowEnd: `span ${height}`,
+                gridColumnStart: columnStart,
+                gridColumnEnd: `span ${width ?? 1}`
+            }}
+        >
+            <span className={styles['item__title']}>{title}</span>
+            <span className={styles['item__company']}>{company}</span>
+        </div>
     );
 };
 

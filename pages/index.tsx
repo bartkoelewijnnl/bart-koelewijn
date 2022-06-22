@@ -1,8 +1,6 @@
 import Badge from 'components/Badge';
 import { Button } from 'components/button';
-import { FormSwitch } from 'components/form';
 import Group from 'components/Group';
-import Intro from 'components/Intro';
 import IntroCta from 'components/IntroCta';
 import Logo from 'components/Logo';
 import Margin from 'components/Margin';
@@ -11,11 +9,11 @@ import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components
 import { H1, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useThemeContext } from 'providers/ThemeProvider';
 import { Container, Row, Col } from 'components/grid';
+import styles from './Home.module.scss';
 
 const Home: NextPage = () => {
-    const { isDark, setIsDark } = useThemeContext();
+    // const { isDark, setIsDark } = useThemeContext();
 
     return (
         <>
@@ -24,8 +22,8 @@ const Home: NextPage = () => {
                 <meta name="description" content="Front-end Developer met gevoel voor design" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} />
-            <Intro>
+            {/* <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} /> */}
+            <div className={styles.intro}>
                 <Container>
                     <Row>
                         <Col
@@ -57,7 +55,7 @@ const Home: NextPage = () => {
                         </Col>
                     </Row>
                 </Container>
-            </Intro>
+            </div>
             <Container>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
