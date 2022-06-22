@@ -2,13 +2,12 @@ import classNames from 'classnames';
 import { Paragraph } from 'components/text';
 import H3 from 'components/text/H3';
 import { FC } from 'react';
-import { Colors } from 'theme';
 
 export interface CardProps {
     title: string;
     subtitle: string;
-    variant: keyof Colors;
-    lightVariant: keyof Colors;
+    variant: string;
+    lightVariant: string;
     className?: string;
 }
 

@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import { Colors } from 'theme';
 import classNames from 'classnames';
 
 export interface ParagraphProps {
-    variant?: keyof Colors;
+    variant?: string;
     noMargin?: boolean;
     className?: string;
     isItalic?: boolean;

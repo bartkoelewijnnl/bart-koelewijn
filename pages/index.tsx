@@ -100,7 +100,7 @@ const Home: NextPage = () => {
                     badges={[
                         { icon: 'redux', title: 'Redux' },
                         { icon: 'slider', title: 'Configurator' },
-                        { icon: 'svg', title: 'Lorem' }
+                        { icon: 'svg', title: 'CSS Masking' }
                     ]}
                     variant="green"
                     lightVariant="lightGreen"

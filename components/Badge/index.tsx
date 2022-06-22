@@ -1,11 +1,10 @@
 import Icon, { Icons } from 'components/Icon';
 import { FC } from 'react';
-import { Colors } from 'theme';
 import classNames from 'classnames';
 
 export interface BadgeProps {
-    color: keyof Colors;
-    lightColor: keyof Colors;
+    color: string;
+    lightColor: string;
     icon: keyof Icons;
     className?: string;
     title: string;
