@@ -1,5 +1,9 @@
 import { motion, Transition, Variants } from 'framer-motion';
 import { FC } from 'react';
+// @ts-ignore
+import { active } from '../Answer/Answer.module.scss';
+// @ts-ignore
+// import { primary } from '../SectionAwaretrain.module.scss';
 
 const OFFSET = 12;
 const RADIUS = 104;
@@ -45,8 +49,7 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
                 cy={center}
                 fill="transparent"
                 r={innerRadius}
-                // stroke={`${theme.colors.awaretrain.white}20`}
-                stroke="red"
+                stroke="#FFFFFF20"
                 strokeWidth={STROKE_WIDTH}
                 strokeDasharray={dashArray}
                 transform={transform}
@@ -57,8 +60,7 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
                 transition={transition}
                 fill="transparent"
                 r={innerRadius}
-                // stroke={theme.colors.awaretrain.active}
-                stroke="red"
+                stroke={active}
                 strokeWidth={STROKE_WIDTH}
                 strokeDasharray={dashArray}
                 transform={transform}
@@ -74,10 +76,10 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
                 initial="initial"
                 animate="animate"
             >
-                {/* <circle cx={center} cy={center} r={16} fill={`${theme.colors.awaretrain.white}20`} />
-                <circle cx={center} cy={center} r={9} fill={theme.colors.awaretrain.white} />
-                <polygon points={`${center},0 ${center + 9},${center} ${center + -9},${center}`} fill={theme.colors.awaretrain.white} />
-                <circle cx={center} cy={center} r={4} fill={theme.colors.awaretrain.primary} /> */}
+                <circle cx={center} cy={center} r={16} fill="#FFFFFF20" />
+                <circle cx={center} cy={center} r={9} fill="white" />
+                <polygon points={`${center},0 ${center + 9},${center} ${center + -9},${center}`} fill="white" />
+                <circle cx={center} cy={center} r={4} fill="#4a72dd" />
             </motion.g>
         </motion.svg>
     );

@@ -181,3 +181,7 @@ $dark: #212749;
         box-shadow: 0 0 0 0.2rem rgba(#ee5d1e, 0.3);
     }
 }
+
+:export {
+    primary: $primary;
+}

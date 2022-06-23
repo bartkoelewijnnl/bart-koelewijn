@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import Icon from 'components/Icon';
 import { useField } from 'formik';
-import styles from './Answer.module.scss';
+// @ts-ignore
+import styles, { green, red } from './Answer.module.scss';
 import classNames from 'classnames';
 
 interface AnswerProps {
@@ -42,8 +43,8 @@ const Answer: FC<AnswerProps> = ({ children, name, id, isAnswered, correctAnswer
                 </div>
             ) : (
                 <div className={styles['answer__radio-wrapper']}>
-                    {showCorrect && <Icon size={1} name="done" color="awaretrain.green" />}
-                    {showIncorrect && <Icon size={1} name="close" color="awaretrain.red" />}
+                    {showCorrect && <Icon size={1} name="done" fill={green} />}
+                    {showIncorrect && <Icon size={1} name="close" fill={red} />}
                 </div>
             )}
             <span

@@ -6,6 +6,7 @@ interface IconProps {
     color?: string;
     name: keyof Icons;
     className?: string;
+    fill?: string;
 }
 
 export interface Icons {
@@ -156,23 +157,14 @@ const icons: Icons = {
     )
 };
 
-export const getColor = (colors: { [key: string]: any }, color: string, defaultColor: string): string => {
-    const result = color.split('.').reduce((a, c) => (a || {})[c], colors);
-
-    if (typeof result === 'string') {
-        return result;
-    }
-
-    return defaultColor;
-};
-
-const Icon: FC<IconProps> = ({ size = 1.5, color = 'primary', name, className }) => {
+const Icon: FC<IconProps> = ({ size = 1.5, color = 'primary', name, className, fill }) => {
     return (
         <svg
-            className={classNames(`icon--${color}`, className)}
+            className={classNames({ [`icon--${color}`]: !fill }, className)}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
             style={{ flex: `0 0 ${size}rem` }}
+            fill={fill}
             width={`${size}rem`}
             height={`${size}rem`}
         >
