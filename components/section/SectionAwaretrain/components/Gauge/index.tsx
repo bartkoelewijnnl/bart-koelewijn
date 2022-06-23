@@ -43,7 +43,6 @@ const Gauge: FC<GaugeProps> = ({ value, max }) => {
     return (
         <motion.svg layout style={{ zIndex: 1 }} height={OFFSET * 2 + RADIUS * 2} width={OFFSET * 2 + RADIUS * 2}>
             <circle cx={center} cy={center} fill="#4a72dd" r={center} />
-            <circle cx={center} cy={center} fill="red" r={center} />
             <circle
                 cx={center}
                 cy={center}
