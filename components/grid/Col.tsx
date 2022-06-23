@@ -26,7 +26,7 @@ const Col: FC<ColProps> = ({ children, offset, order, ...screenClasses }) => {
     // Render.
     const cols = getSceenClasses('col', screenClasses);
     const offsets = getSceenClasses('col__offset', offset);
-    const orders = getSceenClasses('col__order', order);
+    const orders = getSceenClasses('order', order);
 
     return <div className={classNames('col', ...cols, ...offsets, ...orders)}>{children}</div>;
 };

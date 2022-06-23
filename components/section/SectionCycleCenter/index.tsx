@@ -23,17 +23,6 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
             <Row>
                 <Col
                     xs={12}
-                    lg={4}
-                    // @ts-ignore, order does exist.
-                    order={{
-                        xs: 2,
-                        lg: 1
-                    }}
-                >
-                    {children}
-                </Col>
-                <Col
-                    xs={12}
                     md={10}
                     lg={7}
                     offset={{
@@ -42,9 +31,7 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                         lg: 1,
                         xl: 1
                     }}
-                    // @ts-ignore, order does exist.
                     order={{
-                        xs: 1,
                         lg: 2
                     }}
                 >
@@ -71,6 +58,15 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                             </div>
                         </div>
                     </div>
+                </Col>
+                <Col
+                    xs={12}
+                    lg={4}
+                    order={{
+                        lg: 1
+                    }}
+                >
+                    {children}
                 </Col>
             </Row>
         </Margin>
