@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Option, Picker } from './styles';
+import styles from './FinishPicker.module.scss';
+import classNames from 'classnames';
 
 interface FinishPickerProps {
     isGlossy: boolean;
@@ -8,14 +9,24 @@ interface FinishPickerProps {
 
 const FinishPicker: FC<FinishPickerProps> = ({ isGlossy, setIsGlossy }) => {
     return (
-        <Picker>
-            <Option isActive={!isGlossy} onClick={() => setIsGlossy(false)}>
+        <ul className={styles.picker}>
+            <li
+                className={classNames(styles['picker__option'], {
+                    [styles['picker__option--active']]: !isGlossy
+                })}
+                onClick={() => setIsGlossy(false)}
+            >
                 Matt
-            </Option>
-            <Option isActive={isGlossy} onClick={() => setIsGlossy(true)}>
+            </li>
+            <li
+                className={classNames(styles['picker__option'], {
+                    [styles['picker__option--active']]: isGlossy
+                })}
+                onClick={() => setIsGlossy(true)}
+            >
                 Glossy
-            </Option>
-        </Picker>
+            </li>
+        </ul>
     );
 };
 

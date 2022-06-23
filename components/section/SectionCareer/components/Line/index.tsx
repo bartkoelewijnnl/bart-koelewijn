@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Wrapper, Year, Line as SvgLine } from './styles';
+import styles from './Line.module.scss';
 
 interface LineProps {
     year: number;
@@ -7,12 +7,12 @@ interface LineProps {
 
 const Line: FC<LineProps> = ({ year }) => {
     return (
-        <Wrapper>
-            <Year>{year}</Year>
-            <SvgLine height={16} width="100%">
+        <div className={styles.wrapper}>
+            <span className={styles.year}>{year}</span>
+            <svg className={styles.line} height={16} width="100%">
                 <line x1="0" y1="8" x2="100%" y2="8" stroke="white" strokeWidth={1} strokeDasharray={8} strokeDashoffset={0} />
-            </SvgLine>
-        </Wrapper>
+            </svg>
+        </div>
     );
 };
 

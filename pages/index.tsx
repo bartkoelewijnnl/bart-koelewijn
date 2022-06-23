@@ -1,8 +1,6 @@
 import Badge from 'components/Badge';
 import { Button } from 'components/button';
-import { FormSwitch } from 'components/form';
 import Group from 'components/Group';
-import Intro from 'components/Intro';
 import IntroCta from 'components/IntroCta';
 import Logo from 'components/Logo';
 import Margin from 'components/Margin';
@@ -11,11 +9,10 @@ import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components
 import { H1, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useThemeContext } from 'providers/ThemeProvider';
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col } from 'components/grid';
+import styles from './Home.module.scss';
 
 const Home: NextPage = () => {
-    const { isDark, setIsDark } = useThemeContext();
 
     return (
         <>
@@ -24,8 +21,7 @@ const Home: NextPage = () => {
                 <meta name="description" content="Front-end Developer met gevoel voor design" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {/* <FormSwitch checked={isDark} onChange={(event) => setIsDark(event.target.checked)} /> */}
-            <Intro>
+            <div className={styles.intro}>
                 <Container>
                     <Row>
                         <Col
@@ -57,7 +53,7 @@ const Home: NextPage = () => {
                         </Col>
                     </Row>
                 </Container>
-            </Intro>
+            </div>
             <Container>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
@@ -72,7 +68,7 @@ const Home: NextPage = () => {
                         Native Animated&apos;.
                     </Paragraph>
                     <Paragraph isItalic>Denk jij de hoogste score te halen, test je kennis hiernaast of download de app.</Paragraph>
-                    <Margin bottom={3.5}>
+                    <Margin bottom={7}>
                         <Group>
                             <Badge title="SVG" icon="svg" color="blue" lightColor="lightBlue" />
                             <Badge title="Formik" icon="formik" color="blue" lightColor="lightBlue" />
@@ -104,7 +100,7 @@ const Home: NextPage = () => {
                     badges={[
                         { icon: 'redux', title: 'Redux' },
                         { icon: 'slider', title: 'Configurator' },
-                        { icon: 'svg', title: 'Lorem' }
+                        { icon: 'svg', title: 'CSS Masking' }
                     ]}
                     variant="green"
                     lightVariant="lightGreen"
@@ -130,9 +126,7 @@ const Home: NextPage = () => {
                         Bezoek Cycle Center
                     </Button>
                 </SectionCycleCenter>
-                <SectionCareer title="Carrière">
-                    <Paragraph>Een leuk idee, nieuwsgierig of gewoon een vraag?</Paragraph>
-                </SectionCareer>
+                <SectionCareer title="Carrière" />
             </Container>
         </>
     );

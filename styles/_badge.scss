@@ -1,0 +1,37 @@
+.badge {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &[data-tip] {
+        position: relative;
+
+        &:before {
+            content: attr(data-tip);
+            pointer-events: none;
+            position: absolute;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: inherit;
+            color: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            height: 3rem;
+            padding: 0 16px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease, top 0.3s ease;
+        }
+
+        &:hover:before {
+            opacity: 1;
+            top: -4rem;
+        }
+    }
+}

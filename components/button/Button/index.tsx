@@ -1,7 +1,6 @@
-import { Icons } from 'components/Icon';
-import { useThemeContext } from 'providers/ThemeProvider';
+import Icon, { Icons } from 'components/Icon';
 import { FC, HTMLProps } from 'react';
-import { Button as Wrapper, Icon } from './styles';
+import classNames from 'classnames';
 
 interface ButtonProps extends Omit<HTMLProps<HTMLAnchorElement>, 'as'> {
     isOutline?: boolean;
@@ -9,14 +8,24 @@ interface ButtonProps extends Omit<HTMLProps<HTMLAnchorElement>, 'as'> {
     isWhite?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, ...props }) => {
-    const { isDark } = useThemeContext();
-
+const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon }) => {
     return (
-        <Wrapper isOutline={isOutline} isDark={isDark} isWhite={isWhite} {...props}>
-            {icon && <Icon color={(isOutline && !isWhite) || (!isOutline && isWhite) ? 'button' : 'white'} name={icon} />}
+        <button
+            className={classNames('button', {
+                'button--light': isWhite,
+                'button--outline': isOutline,
+                'button--outline--light': isOutline && isWhite
+            })}
+        >
+            {icon && (
+                <Icon
+                    className="button__icon"
+                    color={(isOutline && !isWhite) || (!isOutline && isWhite) ? 'button' : 'white'}
+                    name={icon}
+                />
+            )}
             {children}
-        </Wrapper>
+        </button>
     );
 };
 

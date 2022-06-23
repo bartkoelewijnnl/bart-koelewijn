@@ -1,30 +1,17 @@
 import Icon from 'components/Icon';
 import { Form, Formik, FormikHelpers } from 'formik';
 import { FC } from 'react';
-import { Col } from 'react-grid-system';
+import { Col, Row } from 'components/grid';
 import { SectionProps } from '..';
 import Answer from './components/Answer';
 import Gauge from './components/Gauge';
 import Logo from './components/Logo';
-import {
-    Phone,
-    Card,
-    Website,
-    PhoneWrapper,
-    Question,
-    Top,
-    Bottom,
-    Button,
-    Answers,
-    Section,
-    Explanation,
-    ExplanationTitle,
-    ExplanationText,
-    Gif,
-    PhoneCardWrapper
-} from './styles';
 import { AnimatePresence, LayoutGroup, Variants } from 'framer-motion';
 import { Element } from 'react-scroll';
+import classNames from 'classnames';
+import { motion } from 'framer-motion';
+import styles from './SectionAwaretrain.module.scss';
+import Card from 'components/Card';
 
 interface Answer {
     id: string;
@@ -144,7 +131,7 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
 
     return (
         <Element id="awaretrain" name="awaretrain">
-            <Section>
+            <Row className={styles.section}>
                 <Col
                     xs={12}
                     sm={12}
@@ -157,9 +144,9 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
                         xl: 1
                     }}
                 >
-                    <PhoneCardWrapper>
-                        <Card {...card} />
-                        <PhoneWrapper>
+                    <div className={styles['phone-card']}>
+                        <Card className={styles.card} {...card} />
+                        <div className="position--relative">
                             <AnimatePresence>
                                 <LayoutGroup>
                                     <Formik<SectionAwaretrainValues> initialValues={initialValues} onSubmit={handleOnSubmit}>
@@ -176,26 +163,29 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
 
                                                 return (
                                                     <Form>
-                                                        <Phone>
-                                                            <Top layoutId="top" layout>
+                                                        <div className={classNames('phone', styles.phone)}>
+                                                            <motion.div layoutId="top" className={styles['phone__top']} layout>
                                                                 <Logo />
-                                                                <Gif
+                                                                <motion.div
+                                                                    className={classNames(styles['phone__top__gif'], {
+                                                                        [styles['phone__top__gif--mediocre']]: correctAnswers === 1,
+                                                                        [styles['phone__top__gif--perfect']]: correctAnswers === 2
+                                                                    })}
                                                                     layout
                                                                     variants={gifVariants}
                                                                     initial="initial"
                                                                     animate="animate"
                                                                     exit="exit"
-                                                                    correctAnswers={correctAnswers}
                                                                 />
                                                                 <Gauge value={correctAnswers} max={values.qas.length} />
-                                                            </Top>
-                                                            <Bottom layoutId="bottom" layout>
-                                                                <Button layout type="submit">
+                                                            </motion.div>
+                                                            <motion.div className={styles['phone__bottom']} layoutId="bottom" layout>
+                                                                <motion.button className={styles.button} layout type="submit">
                                                                     Opnieuw
                                                                     <Icon name="again" color="white" />
-                                                                </Button>
-                                                            </Bottom>
-                                                        </Phone>
+                                                                </motion.button>
+                                                            </motion.div>
+                                                        </div>
                                                     </Form>
                                                 );
                                             }
@@ -204,11 +194,12 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
 
                                             return (
                                                 <Form>
-                                                    <Phone>
-                                                        <Top layoutId="top" layout>
+                                                    <div className={classNames('phone', styles.phone)}>
+                                                        <motion.div layoutId="top" className={styles['phone__top']} layout>
                                                             <Logo />
                                                             {qa.url && (
-                                                                <Website
+                                                                <motion.input
+                                                                    className={styles['phone__top__website']}
                                                                     layout
                                                                     initial="initial"
                                                                     animate="animate"
@@ -218,38 +209,52 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
                                                                     disabled
                                                                 />
                                                             )}
-                                                            <Question layout="position">{qa.question}</Question>
-                                                            <Answers layout isFirst>
+                                                            <motion.span className={styles['phone__top__question']} layout="position">
+                                                                {qa.question}
+                                                            </motion.span>
+                                                            <motion.div
+                                                                className={classNames(
+                                                                    styles['phone__answers'],
+                                                                    styles['phone__answers--first']
+                                                                )}
+                                                                layout
+                                                            >
                                                                 {renderAnswer(qa, qaIndex, 0)}
-                                                            </Answers>
-                                                        </Top>
-                                                        <Bottom layoutId="bottom" layout>
-                                                            <Answers layout>
+                                                            </motion.div>
+                                                        </motion.div>
+                                                        <motion.div className={styles['phone__bottom']} layoutId="bottom" layout>
+                                                            <motion.div className={styles['phone__answers']} layout>
                                                                 {renderAnswer(qa, qaIndex, 1)}
                                                                 {renderAnswer(qa, qaIndex, 2)}
-                                                            </Answers>
+                                                            </motion.div>
                                                             {qa.isAnswered && !qa.isExplained && (
-                                                                <Explanation layout>
-                                                                    <ExplanationTitle>Uitleg</ExplanationTitle>
-                                                                    <ExplanationText initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                                                                <motion.div className={styles['phone__explanation']} layout>
+                                                                    <motion.span className={styles['phone__explanation__title']}>
+                                                                        Uitleg
+                                                                    </motion.span>
+                                                                    <motion.span
+                                                                        className={styles['phone__explanation__text']}
+                                                                        initial={{ opacity: 0 }}
+                                                                        animate={{ opacity: 1 }}
+                                                                    >
                                                                         {qa.explanation}
-                                                                    </ExplanationText>
-                                                                </Explanation>
+                                                                    </motion.span>
+                                                                </motion.div>
                                                             )}
-                                                            <Button layout type="submit">
+                                                            <motion.button className={styles.button} layout type="submit">
                                                                 {!qa.isAnswered ? 'Beantwoorden' : 'Afronden'}
                                                                 <Icon name="right" color="white" />
-                                                            </Button>
-                                                        </Bottom>
-                                                    </Phone>
+                                                            </motion.button>
+                                                        </motion.div>
+                                                    </div>
                                                 </Form>
                                             );
                                         }}
                                     </Formik>
                                 </LayoutGroup>
                             </AnimatePresence>
-                        </PhoneWrapper>
-                    </PhoneCardWrapper>
+                        </div>
+                    </div>
                 </Col>
                 <Col
                     xs={12}
@@ -265,7 +270,7 @@ const SectionAwaretrain: FC<SectionAwaretrainProps> = ({ children, ...card }) =>
                 >
                     {children}
                 </Col>
-            </Section>
+            </Row>
         </Element>
     );
 };

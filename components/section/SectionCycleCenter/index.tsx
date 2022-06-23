@@ -2,12 +2,13 @@ import Badge, { BadgeProps } from 'components/Badge';
 import Group from 'components/Group';
 import Margin from 'components/Margin';
 import { FC, useState } from 'react';
-import { Col, Hidden, Row } from 'react-grid-system';
+import { Col, Row } from 'components/grid';
 import { SectionProps } from '..';
-import { Content, Background, Side, Category, BikeContent, Card } from './styles';
 import ColorPicker, { COLORS } from './components/ColorPicker';
 import Bike from './components/Bike';
 import FinishPicker from './components/FinishPicker';
+import Card from 'components/Card';
+import styles from './SectionCycleCenter.module.scss';
 
 interface SectionCycleCenterProps extends SectionProps {
     badges: Omit<BadgeProps, 'color' | 'lightColor'>[];
@@ -18,19 +19,8 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
     const [isGlossy, setIsGlossy] = useState<boolean>(true);
 
     return (
-        <Margin bottom={7.5}>
+        <Margin bottom={15}>
             <Row>
-                <Col
-                    xs={12}
-                    lg={4}
-                    // @ts-ignore, order does exist.
-                    order={{
-                        xs: 2,
-                        lg: 1
-                    }}
-                >
-                    {children}
-                </Col>
                 <Col
                     xs={12}
                     md={10}
@@ -41,35 +31,42 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                         lg: 1,
                         xl: 1
                     }}
-                    // @ts-ignore, order does exist.
                     order={{
-                        xs: 1,
                         lg: 2
                     }}
                 >
-                    <Content>
-                        <Hidden xs sm>
-                            <Margin right={4}>
+                    <div className={styles.content}>
+                        <div className={styles.hidden}>
+                            <Margin right={8}>
                                 <Group>
                                     {badges.map((badge, index) => (
                                         <Badge key={index} {...badge} color={card.variant} lightColor={card.lightVariant} />
                                     ))}
                                 </Group>
                             </Margin>
-                        </Hidden>
-                        <Card {...card} />
-                    </Content>
-                    <Background>
-                        <BikeContent>
+                        </div>
+                        <Card className={styles.card} {...card} />
+                    </div>
+                    <div className={styles['bike-wrapper__background']}>
+                        <div className={styles['bike-wrapper__content']}>
                             <Bike color={color} isGlossy={isGlossy} />
-                            <Side>
-                                <Category>Ontwerp</Category>
+                            <div>
+                                <span className={styles.category}>Ontwerp</span>
                                 <ColorPicker color={color} setColor={setColor} />
-                                <Category>Afwerking</Category>
+                                <span className={styles.category}>Afwerking</span>
                                 <FinishPicker isGlossy={isGlossy} setIsGlossy={setIsGlossy} />
-                            </Side>
-                        </BikeContent>
-                    </Background>
+                            </div>
+                        </div>
+                    </div>
+                </Col>
+                <Col
+                    xs={12}
+                    lg={4}
+                    order={{
+                        lg: 1
+                    }}
+                >
+                    {children}
                 </Col>
             </Row>
         </Margin>

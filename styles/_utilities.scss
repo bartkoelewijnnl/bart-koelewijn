@@ -1,0 +1,62 @@
+$utilities: (
+    "margin-bottom": (
+        property: margin-bottom,
+        class: mb,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    "margin-right": (
+        property: margin-right,
+        class: mr,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    "margin-top": (
+        property: margin-top,
+        class: mt,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    "position": (
+        property: position,
+        values: static relative absolute,
+    ),
+    "order": (
+        responsive: true,
+        property: order,
+        class: order,
+        values: (
+            0: 0,
+            1: 1,
+            2: 2,
+            3: 3,
+        ),
+    ),
+);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @each $key, $utility in $utilities {
+            @if type-of($utility) == "map" and (map-get($utility, responsive) or $infix == "") {
+                @include generate-utility($utility, $infix);
+            }
+        }
+    }
+}

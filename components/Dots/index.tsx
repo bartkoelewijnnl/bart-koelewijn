@@ -1,5 +1,5 @@
+import classNames from 'classnames';
 import { FC } from 'react';
-import { Dots as Wrapper, Dot } from './styles';
 
 interface DotsProps {
     className?: string;
@@ -8,11 +8,11 @@ interface DotsProps {
 
 const Dots: FC<DotsProps> = ({ className, isSmall }) => {
     return (
-        <Wrapper className={className} isSmall={isSmall}>
+        <div className={classNames('dots', { 'dots--small': isSmall }, className)}>
             {Array.from(Array(isSmall ? 9 : 16).keys()).map((dot) => (
-                <Dot key={dot} />
+                <div className="dots__dot" key={dot} />
             ))}
-        </Wrapper>
+        </div>
     );
 };
 

@@ -1,9 +1,9 @@
-import { useTheme } from '@emotion/react';
+import { FC } from 'react';
 import Icon from 'components/Icon';
 import { useField } from 'formik';
-import { rgba } from 'polished';
-import { FC } from 'react';
-import { Answer as Wrapper, Input, Radio, Text, RadioWrapper } from './styles';
+// @ts-ignore
+import styles, { green, red } from './Answer.module.scss';
+import classNames from 'classnames';
 
 interface AnswerProps {
     id: string;
@@ -14,7 +14,6 @@ interface AnswerProps {
 
 const Answer: FC<AnswerProps> = ({ children, name, id, isAnswered, correctAnswer }) => {
     const [field, _, helpers] = useField<string>(name);
-    const theme = useTheme();
 
     // Methods.
     const handleOnChange = () => {
@@ -29,34 +28,34 @@ const Answer: FC<AnswerProps> = ({ children, name, id, isAnswered, correctAnswer
     const checked = id === field.value;
     const showCorrect = isAnswered && id === correctAnswer;
     const showIncorrect = isAnswered && id === field.value && !showCorrect;
-    const textColor = showCorrect
-        ? theme.colors.awaretrain.green
-        : undefined || showIncorrect
-        ? theme.colors.awaretrain.red
-        : undefined || isAnswered
-        ? rgba(theme.colors.awaretrain.dark, 0.2)
-        : undefined;
-    const background = showCorrect
-        ? theme.colors.awaretrain.lightGreen
-        : undefined || showIncorrect
-        ? theme.colors.awaretrain.lightRed
-        : undefined;
 
     return (
-        <Wrapper background={background}>
+        <label
+            className={classNames(styles.answer, {
+                [styles['answer--correct']]: showCorrect,
+                [styles['answer--incorrect']]: showIncorrect
+            })}
+        >
             {!isAnswered ? (
-                <RadioWrapper>
-                    <Input type="radio" onChange={handleOnChange} checked={checked} />
-                    <Radio />
-                </RadioWrapper>
+                <div className={styles['answer__radio-wrapper']}>
+                    <input type="radio" onChange={handleOnChange} checked={checked} />
+                    <div className={styles['answer__radio-wrapper__radio']} />
+                </div>
             ) : (
-                <RadioWrapper>
-                    {showCorrect && <Icon size={1} name="done" color="awaretrain.green" />}
-                    {showIncorrect && <Icon size={1} name="close" color="awaretrain.red" />}
-                </RadioWrapper>
+                <div className={styles['answer__radio-wrapper']}>
+                    {showCorrect && <Icon size={1} name="done" fill={green} />}
+                    {showIncorrect && <Icon size={1} name="close" fill={red} />}
+                </div>
             )}
-            <Text color={textColor}>{children}</Text>
-        </Wrapper>
+            <span
+                className={classNames(styles['answer__text'], {
+                    [styles['answer__text--correct']]: showCorrect,
+                    [styles['answer__text--incorrect']]: showIncorrect
+                })}
+            >
+                {children}
+            </span>
+        </label>
     );
 };
 

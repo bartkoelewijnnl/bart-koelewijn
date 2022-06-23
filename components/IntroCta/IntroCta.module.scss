@@ -1,0 +1,16 @@
+@import "mixins";
+
+.cta {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 4rem;
+        margin-bottom: auto;
+    }
+}
+
+.dots {
+    margin-left: 2rem;
+    margin-bottom: -2.5rem;
+}
