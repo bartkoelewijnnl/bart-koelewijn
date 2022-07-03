@@ -28,11 +28,11 @@ const SectionCareer: FC<SectionCareerProps> = ({ title }) => {
                     <Lines minYear={MIN_YEAR} maxYear={MAX_YEAR} />
                 </div>
                 <Margin bottom={2}>
-                    <Button href="https://www.linkedin.com/in/bart-koelewijn-ba1424b7/" target="_blank" icon="link" isWhite>
+                    <Button as="a" href="https://www.linkedin.com/in/bart-koelewijn-ba1424b7/" target="_blank" icon="link" isWhite>
                         LinkedIn
                     </Button>
                 </Margin>
-                <Button href="mailto:bartkoelewijnnl@gmail.com" icon="mail" isOutline isWhite>
+                <Button as="a" href="mailto:bartkoelewijnnl@gmail.com" icon="mail" isOutline isWhite>
                     bartkoelewijnnl@gmail.com
                 </Button>
             </div>

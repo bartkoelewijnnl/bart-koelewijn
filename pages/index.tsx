@@ -77,6 +77,7 @@ const Home: NextPage = () => {
                     </Margin>
                     <Group isLarge>
                         <Button
+                            as="a"
                             icon="apple"
                             href="https://apps.apple.com/nl/app/awaretrain-security-awareness/id1527995399/"
                             target="_blank"
@@ -85,6 +86,7 @@ const Home: NextPage = () => {
                             iPhone
                         </Button>
                         <Button
+                            as="a"
                             icon="android"
                             href="https://play.google.com/store/apps/details?id=nl.bluenotion.awaretrain&hl=nl/"
                             target="_blank"
@@ -118,6 +120,7 @@ const Home: NextPage = () => {
                     </Paragraph>
                     <Paragraph isItalic>Welke kleur fiets kies jij?</Paragraph>
                     <Button
+                        as="a"
                         href="https://configurator.apexbikes.cc/"
                         target="_blank"
                         icon="link"

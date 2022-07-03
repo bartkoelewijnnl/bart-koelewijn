@@ -1,21 +1,23 @@
 import Icon, { Icons } from 'components/Icon';
-import { FC, HTMLProps } from 'react';
+import { AnchorHTMLAttributes, ElementType, FC } from 'react';
 import classNames from 'classnames';
 
-interface ButtonProps extends Omit<HTMLProps<HTMLAnchorElement>, 'as'> {
+interface ButtonProps extends AnchorHTMLAttributes<HTMLElement> {
     isOutline?: boolean;
     icon?: keyof Icons;
     isWhite?: boolean;
+    as?: ElementType;
 }
 
-const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon }) => {
+const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, as: Component = "a", ...props }) => {
     return (
-        <button
+        <Component
             className={classNames('button', {
                 'button--light': isWhite,
                 'button--outline': isOutline,
                 'button--outline--light': isOutline && isWhite
             })}
+            {...props}
         >
             {icon && (
                 <Icon
@@ -25,7 +27,7 @@ const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon }) => {
                 />
             )}
             {children}
-        </button>
+        </Component>
     );
 };
 
