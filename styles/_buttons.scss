@@ -1,13 +1,45 @@
 .round-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
     background-color: $white;
     box-shadow: -5px 10px 20px rgba($primary, 0.2);
     border: none;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s;
+    color: $primary;
 
     &:hover {
         cursor: pointer;
+        background-color: $primary;
+        color: $white;
+    }
+
+    > svg {
+        fill: currentColor;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        &:hover svg {
+            animation: to-bottom-from-top 0.5s forwards;
+        }
+
+        @keyframes to-bottom-from-top {
+            49% {
+                transform: translateY(100%);
+            }
+            50% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            51% {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -16,13 +48,15 @@
     border-radius: 8px;
     color: white;
     border: none;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     padding: 0 24px;
     font-size: 1rem;
     line-height: 1;
     display: inline-flex;
     align-items: center;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
 
     &:hover {
         cursor: pointer;
@@ -30,6 +64,10 @@
 
     &:focus {
         box-shadow: 0 0 0 0.2rem rgba($button, 0.3);
+    }
+
+    &:focus-visible {
+        outline-color: $primary;
     }
 
     &,
@@ -40,6 +78,14 @@
     &--light {
         color: $primary;
         background-color: $white;
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba($white, 0.3);
+        }
+
+        &:focus-visible {
+            outline-color: $white;
+        }
     }
 
     &--outline {
@@ -59,5 +105,92 @@
 
     &__icon {
         margin-right: 16px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &:hover {
+            background-color: mix($black, $button, 20%);
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        &:before,
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:before {
+            content: '';
+            background: mix($black, $button, 20%);
+            width: 120%;
+            height: 0;
+            padding-bottom: 120%;
+            top: -110%;
+            left: -10%;
+            border-radius: 50%;
+            transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+        }
+
+        &:after {
+            content: '';
+            background: mix($black, $button, 20%);
+            transform: translate3d(0, -100%, 0);
+            transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+        }
+
+        &--light,
+        &--outline {
+            &:before,
+            &:after {
+                background: $dot;
+            }
+        }
+
+        span {
+            z-index: 10;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        &:hover {
+            &:before {
+                transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+                transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+            }
+
+            &:after {
+                transform: translate3d(0, 0, 0);
+                transition-duration: 0.05s;
+                transition-delay: 0.4s;
+                transition-timing-function: linear;
+            }
+
+            span {
+                animation: move-scale-up-initial 0.3s forwards, move-scale-up-end 0.3s forwards 0.3s;
+            }
+        }
+
+        @keyframes move-scale-up-initial {
+            to {
+                transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes move-scale-up-end {
+            from {
+                transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+                opacity: 0;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
     }
 }

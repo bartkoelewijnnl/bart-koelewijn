@@ -1,4 +1,14 @@
 @import "variables.module";
+@import "mixins";
+@import "color";
+@import "text";
+@import "card";
+@import "icon";
+@import "badge";
+@import "buttons";
+@import "utilities";
+@import "container";
+@import "grid";
 
 * {
     margin: 0;
@@ -20,17 +30,11 @@ input {
     font-family: inherit;
 }
 
-@import "mixins";
+:focus-visible {
+    outline: 1px dashed currentColor;
+    outline-offset: 0.4rem;
+}
 
-@import "color";
-@import "text";
-@import "card";
-@import "icon";
-@import "badge";
-@import "buttons";
-@import "utilities";
-@import "container";
-@import "grid";
 
 @mixin make-col($size: false) {
     @if $size {

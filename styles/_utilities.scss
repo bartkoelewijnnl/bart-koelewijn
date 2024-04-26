@@ -1,42 +1,42 @@
 $utilities: (
-    "margin-bottom": (
+    'margin-bottom': (
         property: margin-bottom,
         class: mb,
         values:
             map-merge(
                 $spacers,
                 (
-                    auto: auto,
+                    auto: auto
                 )
-            ),
+            )
     ),
-    "margin-right": (
+    'margin-right': (
         property: margin-right,
         class: mr,
         values:
             map-merge(
                 $spacers,
                 (
-                    auto: auto,
+                    auto: auto
                 )
-            ),
+            )
     ),
-    "margin-top": (
+    'margin-top': (
         property: margin-top,
         class: mt,
         values:
             map-merge(
                 $spacers,
                 (
-                    auto: auto,
+                    auto: auto
                 )
-            ),
+            )
     ),
-    "position": (
+    'position': (
         property: position,
-        values: static relative absolute,
+        values: static relative absolute
     ),
-    "order": (
+    'order': (
         responsive: true,
         property: order,
         class: order,
@@ -44,9 +44,22 @@ $utilities: (
             0: 0,
             1: 1,
             2: 2,
-            3: 3,
-        ),
+            3: 3
+        )
     ),
+    'rounded': (
+        property: border-radius,
+        class: rounded,
+        values: (
+            0: 0,
+            full: 9999px
+        )
+    ),
+    'display': (
+        property: display,
+        class: d,
+        values: block inline-block inline flex inline-flex
+    )
 );
 
 @each $breakpoint in map-keys($grid-breakpoints) {
@@ -54,7 +67,7 @@ $utilities: (
         $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
         @each $key, $utility in $utilities {
-            @if type-of($utility) == "map" and (map-get($utility, responsive) or $infix == "") {
+            @if type-of($utility) == 'map' and (map-get($utility, responsive) or $infix == '') {
                 @include generate-utility($utility, $infix);
             }
         }
