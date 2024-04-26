@@ -18,7 +18,7 @@ const skillVariants: Variants = {
 // prettier-ignore
 const skills: SkillProps[] = [
     { icon: 'react' },
-    { icon: 'flutter' },
+    { icon: 'strapi' },
     { icon: 'vue' },
     { icon: 'git' }
 ];

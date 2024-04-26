@@ -22,4 +22,16 @@
         font-style: italic;
         display: flex;
     }
+
+    &--active {
+        background-color: $white;
+
+        &__title {
+            color: $primary;
+        }
+
+        &__company {
+            color: $primary;
+        }
+    }
 }

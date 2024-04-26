@@ -33,6 +33,7 @@ export interface Icons {
     react: JSX.Element;
     flutter: JSX.Element;
     git: JSX.Element;
+    strapi: JSX.Element;
 }
 
 // TODO
@@ -133,6 +134,16 @@ const icons: Icons = {
             <rect width="8.485" height="8.485" x="16.757" y="28.757" fill="#03a9f4" transform="rotate(-45.001 21 33)" />
             <polygon fill="#01579b" points="38,44 26,44 21,39 27,33" />
             <polygon fill="#084994" points="21,39 30,36 27,33" />
+        </g>
+    ),
+    strapi: (
+        <g>
+            <path fill="#8e75ff" d="M31.9,32.6v-15.6c0-.6-.5-1-1-1h-15.6V0h31.6c.6,0,1,.4,1,1h0v31.6h-16.1Z" />
+            <path
+                fill="#8e75ff"
+                opacity={0.4}
+                d="M15.4,0v16.1H.5C.2,16.1,0,15.8,0,15.6c0-.1,0-.3.1-.4L15.4,0ZM31.9,47.5v-14.9h16.1l-15.2,15.2c-.2.2-.5.2-.7,0,0,0-.1-.2-.1-.4h0ZM15.4,16.1h16.1c.3,0,.5.2.5.5v16.1h-15.6c-.6,0-1-.4-1-1v-15.6Z"
+            />
         </g>
     ),
     git: (

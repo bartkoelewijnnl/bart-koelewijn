@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styles from './Item.module.scss';
+import classNames from 'classnames';
 
 export interface ItemProps {
     title: string;
@@ -8,12 +9,13 @@ export interface ItemProps {
     height: number;
     columnStart?: number;
     rowStart?: number;
+    active?: boolean;
 }
 
-const Item: FC<ItemProps> = ({ width, height, company, columnStart, rowStart, title }) => {
+const Item: FC<ItemProps> = ({ width, active, height, company, columnStart, rowStart, title }) => {
     return (
         <div
-            className={styles.item}
+            className={classNames(styles.item, { [styles['item--active']]: active })}
             style={{
                 gridRowStart: rowStart,
                 gridRowEnd: `span ${height}`,
@@ -21,8 +23,8 @@ const Item: FC<ItemProps> = ({ width, height, company, columnStart, rowStart, ti
                 gridColumnEnd: `span ${width ?? 1}`
             }}
         >
-            <span className={styles['item__title']}>{title}</span>
-            <span className={styles['item__company']}>{company}</span>
+            <span className={classNames(styles['item__title'], { [styles['item--active__title']]: active })}>{title}</span>
+            <span className={classNames(styles['item__company'], { [styles['item--active__company']]: active })}>{company}</span>
         </div>
     );
 };

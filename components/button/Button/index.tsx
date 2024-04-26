@@ -9,7 +9,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLElement> {
     as?: ElementType;
 }
 
-const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, as: Component = "a", ...props }) => {
+const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, as: Component = 'a', ...props }) => {
     return (
         <Component
             className={classNames('button', {
@@ -19,14 +19,16 @@ const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, as: Compo
             })}
             {...props}
         >
-            {icon && (
-                <Icon
-                    className="button__icon"
-                    color={(isOutline && !isWhite) || (!isOutline && isWhite) ? 'button' : 'white'}
-                    name={icon}
-                />
-            )}
-            {children}
+            <span>
+                {icon && (
+                    <Icon
+                        className="button__icon"
+                        color={(isOutline && !isWhite) || (!isOutline && isWhite) ? 'button' : 'white'}
+                        name={icon}
+                    />
+                )}
+                {children}
+            </span>
         </Component>
     );
 };

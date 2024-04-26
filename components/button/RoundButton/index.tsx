@@ -1,14 +1,18 @@
 import classNames from 'classnames';
 import Icon from 'components/Icon';
-import { FC, HTMLProps } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, FC } from 'react';
 
-interface RoundButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'as' | 'type'> {}
+type Attributes = AnchorHTMLAttributes<HTMLAnchorElement> & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const RoundButton: FC<RoundButtonProps> = ({ className, ...props }) => {
+interface RoundButtonProps extends Attributes {
+    as?: ElementType;
+}
+
+const RoundButton: FC<RoundButtonProps> = ({ className, as: Tag = 'button', ...props }) => {
     return (
-        <button className={classNames('round-button', className)} {...props}>
+        <Tag className={classNames('round-button', className)} {...props}>
             <Icon name="down" />
-        </button>
+        </Tag>
     );
 };
 
