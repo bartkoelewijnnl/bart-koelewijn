@@ -25,7 +25,7 @@ const KiKa: FC<KiKaProps> = () => {
             <div className={styles.website__logo}>
                 <Image src={Svg} objectFit="contain" height={70} alt="Logo Bart Koelewijn" />
             </div>
-            <a href="https://kika.nl/" target="_blank" className="p p--no-margin color--black d--inline-flex mt--auto">
+            <a href="https://kika.nl/" rel="noreferrer" target="_blank" className="p p--no-margin color--black d--inline-flex mt--auto">
                 KiKa
                 <Icon className="ml--1" name="link" color="black" />
             </a>

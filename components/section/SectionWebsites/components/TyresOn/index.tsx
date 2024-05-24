@@ -16,7 +16,7 @@ const TyresOn: FC<TyresOnProps> = () => {
                 {/* 26/3 */}
                 <Logo className="w--100" isHover={isHover} width={208} height={26} />
             </div>
-            <a href="https://www.tyres-on.nl/" target="_blank" className="p p--no-margin color--black d--inline-flex mt--auto">
+            <a href="https://www.tyres-on.nl/" rel="noreferrer" target="_blank" className="p p--no-margin color--black d--inline-flex mt--auto">
                 Tyres-on
                 <Icon className="ml--1" name="link" color="black" />
             </a>
