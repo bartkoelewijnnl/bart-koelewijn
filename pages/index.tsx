@@ -60,44 +60,6 @@ const Home: NextPage = () => {
             </div>
             <Container>
                 {/* <H2>Portfolio</H2> */}
-                <SectionWebsites
-                    title="Websites"
-                    subtitle="KiKa en Tyres-on"
-                    variant="orange"
-                    lightVariant="lichtOrange"
-                    badges={[
-                        { icon: 'tailwind', title: 'Tailwind' },
-                        { icon: 'nextJs', title: 'Next.js' },
-                        { icon: 'svg', title: 'CSS Masking' }
-                    ]}
-                >
-                    <Paragraph>
-                        Tijdens mijn werk bij{' '}
-                        <Link
-                            className="d--inline-flex align-items--center"
-                            href="#ef2"
-                            to="ef2"
-                            smooth
-                            offset={-32}
-                            aria-label="Scroll naar Carrière"
-                        >
-                            {/* <Icon name="down" color="black" size={1} /> */}
-                            EF2
-                        </Link>{' '}
-                        heb ik aan verschillende projecten gewerkt. Zo ook aan website van KiKa en Tyres-on. Beide websites hebben een eigen
-                        doelgroep en uitstraling. KiKa is een stichting die zich inzet om de genezingskans van kinderen met kanker te
-                        verhogen naar 100%. Tyres-on specialiseert zich in banden en biedt diensten zoals verkoop, installatie en
-                        uitlijning.
-                    </Paragraph>
-                    {/* prettier-ignore */}
-                    {/* <Paragraph>
-                        De websites zijn geschreven met Next.js en Strapi.
-                        
-                    </Paragraph> */}
-                    <Button as="a" href="https://kika.nl/" target="_blank" icon="link" aria-label="Bezoek de website van KiKa">
-                        Bezoek KiKa
-                    </Button>
-                </SectionWebsites>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
                         Awaretrain is een adviesbureau dat bewustwording realiseert op het gebied van informatiebeveiliging, cybersecurity
@@ -110,7 +72,7 @@ const Home: NextPage = () => {
                         leukste uitdaging was het uitwerken van een graadmeter op het score scherm. Dit heb ik gedaan met SVG en &apos;React
                         Native Animated&apos;.
                     </Paragraph>
-                    <Paragraph isItalic>Denk jij de hoogste score te halen, test je kennis hiernaast of download de app.</Paragraph>
+                    <Paragraph isItalic><span className='color--black'>Denk jij de hoogste score te halen, test je kennis hiernaast</span> of download de app.</Paragraph>
                     <Margin bottom={7}>
                         <Group>
                             <Badge title="SVG" icon="svg" color="blue" lightColor="lightBlue" />
@@ -140,6 +102,44 @@ const Home: NextPage = () => {
                         </Button>
                     </Group>
                 </SectionAwaretrain>
+                <SectionWebsites
+                    title="Websites"
+                    subtitle="KiKa en Tyres-on"
+                    variant="orange"
+                    lightVariant="lichtOrange"
+                    badges={[
+                        { icon: 'tailwind', title: 'Tailwind' },
+                        { icon: 'nextJs', title: 'Next.js' },
+                        { icon: 'transition', title: 'Animatie' }
+                    ]}
+                >
+                    <Paragraph>
+                        Tijdens mijn werk bij{' '}
+                        <Link
+                            className="d--inline-flex align-items--center"
+                            href="#ef2"
+                            to="ef2"
+                            smooth
+                            offset={-32}
+                            aria-label="Scroll naar Carrière"
+                        >
+                            {/* <Icon name="down" color="black" size={1} /> */}
+                            EF2
+                        </Link>{' '}
+                        heb ik aan verschillende projecten gewerkt. Zo ook aan website van KiKa en Tyres-on. Beide websites hebben een eigen
+                        doelgroep en uitstraling. KiKa is een stichting die zich inzet om de genezingskans van kinderen met kanker te
+                        verhogen naar 100%. Tyres-on specialiseert zich in banden en biedt diensten zoals verkoop, installatie en
+                        uitlijning.
+                    </Paragraph>
+                    {/* prettier-ignore */}
+                    <Paragraph>
+                        De websites zijn geschreven met Next.js en Strapi. Next.js is een react-framework voor server-side rendering en statische sitegeneratie. Strapi is een headless CMS. De websites zijn opgezet met Tailwind CSS en ik heb de front-end van beide websites opgezet vanuit een (Figma) ontwerp bestand.
+                        
+                    </Paragraph>
+                    <Button as="a" href="https://kika.nl/" target="_blank" icon="link" aria-label="Bezoek de website van KiKa">
+                        Bezoek KiKa
+                    </Button>
+                </SectionWebsites>
                 <SectionCycleCenter
                     subtitle="Customized APEX racefietsen"
                     badges={[

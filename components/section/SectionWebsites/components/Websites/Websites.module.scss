@@ -43,7 +43,6 @@
     position: relative;
     height: 100%;
     transition: background 0.3s;
-   
 
     @include media-breakpoint-up(md) {
         border-radius: 0.5rem;
@@ -80,7 +79,7 @@
         align-items: center;
         flex: none;
         height: 70px;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     &__part {

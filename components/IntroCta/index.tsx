@@ -10,7 +10,7 @@ const IntroCta: FC<IntroCtaProps> = () => {
     return (
         <div className={styles.cta}>
             <Dots className={styles.dots} isSmall />
-            <Link className="rounded--full color--primary d--inline-flex" href="#websites" to="websites" smooth offset={-64} aria-label="Scroll naar inhoud">
+            <Link className="rounded--full color--primary d--inline-flex" href="#awaretrain" to="awaretrain" smooth offset={-64} aria-label="Scroll naar inhoud">
                 <RoundButton as="span" />
             </Link>
         </div>
