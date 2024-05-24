@@ -150,6 +150,13 @@
             }
         }
 
+        &--outline--light {
+            &:before,
+            &:after {
+                background: mix($black, $button, 20%);
+            }
+        }
+
         span {
             z-index: 10;
             position: relative;

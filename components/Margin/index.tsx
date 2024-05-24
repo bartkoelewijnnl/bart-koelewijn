@@ -13,14 +13,15 @@ interface MarginProps {
     left?: size;
 }
 
-const Margin: FC<MarginProps> = ({ children, all, bottom, top, right }) => {
+const Margin: FC<MarginProps> = ({ children, all, bottom, top, right, left }) => {
     return (
         <div
             className={classNames('m', {
                 [`m--${all}`]: all,
                 [`mb--${bottom}`]: bottom,
                 [`mt--${top}`]: top,
-                [`mr--${right}`]: right
+                [`mr--${right}`]: right,
+                [`ml--${left}`]: left
             })}
         >
             {children}

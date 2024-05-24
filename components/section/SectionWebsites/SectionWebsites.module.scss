@@ -1,0 +1,28 @@
+@import "mixins";
+
+$background: #eaedef;
+$primary: #282f33;
+
+.hidden {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+}
+
+.card {
+    margin-left: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+        margin-left: 0;
+    }
+}
+
+.category {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    color: rgba($primary, 0.3);
+}

@@ -1,14 +1,14 @@
-@import "variables.module";
-@import "mixins";
-@import "color";
-@import "text";
-@import "card";
-@import "icon";
-@import "badge";
-@import "buttons";
-@import "utilities";
-@import "container";
-@import "grid";
+@import 'variables.module';
+@import 'mixins';
+@import 'color';
+@import 'text';
+@import 'card';
+@import 'icon';
+@import 'badge';
+@import 'buttons';
+@import 'utilities';
+@import 'container';
+@import 'grid';
 
 * {
     margin: 0;
@@ -18,7 +18,7 @@
 
 html,
 body {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
@@ -34,7 +34,6 @@ input {
     outline: 1px dashed currentColor;
     outline-offset: 0.4rem;
 }
-
 
 @mixin make-col($size: false) {
     @if $size {
@@ -64,6 +63,20 @@ input {
         > * {
             margin-right: 24px;
         }
+    }
+}
+
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-16px);
     }
 }
 

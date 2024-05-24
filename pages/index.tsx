@@ -5,21 +5,25 @@ import IntroCta from 'components/IntroCta';
 import Logo from 'components/Logo';
 import Margin from 'components/Margin';
 import Profile from 'components/Profile';
-import { SectionAwaretrain, SectionCareer, SectionCycleCenter } from 'components/section';
-import { H1, Paragraph } from 'components/text';
+import { SectionAwaretrain, SectionCareer, SectionCycleCenter, SectionWebsites } from 'components/section';
+import { H1, H2, Paragraph } from 'components/text';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Container, Row, Col } from 'components/grid';
 import styles from './Home.module.scss';
+import { Link } from 'react-scroll';
+import Icon from 'components/Icon';
 
 const Home: NextPage = () => {
-
     return (
         <>
             <Head>
                 <title>Bart Koelewijn - Portfolio</title>
                 <meta name="description" content="Front-end Developer met gevoel voor design" />
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             </Head>
             <div className={styles.intro}>
                 <Container>
@@ -55,6 +59,45 @@ const Home: NextPage = () => {
                 </Container>
             </div>
             <Container>
+                {/* <H2>Portfolio</H2> */}
+                <SectionWebsites
+                    title="Websites"
+                    subtitle="KiKa en Tyres-on"
+                    variant="orange"
+                    lightVariant="lichtOrange"
+                    badges={[
+                        { icon: 'tailwind', title: 'Tailwind' },
+                        { icon: 'nextJs', title: 'Next.js' },
+                        { icon: 'svg', title: 'CSS Masking' }
+                    ]}
+                >
+                    <Paragraph>
+                        Tijdens mijn werk bij{' '}
+                        <Link
+                            className="d--inline-flex align-items--center"
+                            href="#ef2"
+                            to="ef2"
+                            smooth
+                            offset={-32}
+                            aria-label="Scroll naar Carrière"
+                        >
+                            {/* <Icon name="down" color="black" size={1} /> */}
+                            EF2
+                        </Link>{' '}
+                        heb ik aan verschillende projecten gewerkt. Zo ook aan website van KiKa en Tyres-on. Beide websites hebben een eigen
+                        doelgroep en uitstraling. KiKa is een stichting die zich inzet om de genezingskans van kinderen met kanker te
+                        verhogen naar 100%. Tyres-on specialiseert zich in banden en biedt diensten zoals verkoop, installatie en
+                        uitlijning.
+                    </Paragraph>
+                    {/* prettier-ignore */}
+                    {/* <Paragraph>
+                        De websites zijn geschreven met Next.js en Strapi.
+                        
+                    </Paragraph> */}
+                    <Button as="a" href="https://kika.nl/" target="_blank" icon="link" aria-label="Bezoek de website van KiKa">
+                        Bezoek KiKa
+                    </Button>
+                </SectionWebsites>
                 <SectionAwaretrain variant="blue" lightVariant="lightBlue" title="Awaretrain" subtitle="Bewustwording creëren">
                     <Paragraph>
                         Awaretrain is een adviesbureau dat bewustwording realiseert op het gebied van informatiebeveiliging, cybersecurity

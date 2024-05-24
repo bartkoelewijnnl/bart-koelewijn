@@ -10,20 +10,24 @@ $lightGreen: #e6f9f1;
 $grey: #f4f6fa;
 $background: #ffffff;
 $dot: #e0e0e0;
+$orange: #e87511;
+$lichtOrange: #efdebd;
 
 $colors: (
-    "primary": $primary,
-    "white": $white,
-    "black": $black,
-    "text": $text,
-    "blue": $blue,
-    "lightBlue": $lightBlue,
-    "green": $green,
-    "lightGreen": $lightGreen,
-    "grey": $grey,
-    "background": $background,
-    "dot": $dot,
-    "button": $button,
+    'primary': $primary,
+    'white': $white,
+    'black': $black,
+    'text': $text,
+    'blue': $blue,
+    'lightBlue': $lightBlue,
+    'green': $green,
+    'lightGreen': $lightGreen,
+    'orange': $orange,
+    'lichtOrange': $lichtOrange,
+    'grey': $grey,
+    'background': $background,
+    'dot': $dot,
+    'button': $button
 );
 
 // Spacing.
@@ -44,7 +48,7 @@ $spacers: (
     12: $spacer * 6,
     13: $spacer * 6.5,
     14: $spacer * 7,
-    15: $spacer * 7.5,
+    15: $spacer * 7.5
 );
 
 // Grid.
@@ -54,7 +58,7 @@ $grid-breakpoints: (
     sm: 768px,
     md: 992px,
     lg: 1200px,
-    xl: 1440px,
+    xl: 1440px
 );
 
 $container-max-widths: (
@@ -62,7 +66,7 @@ $container-max-widths: (
     sm: 576px,
     md: 768px,
     lg: 992px,
-    xl: 1152px,
+    xl: 1152px
 );
 
 :export {

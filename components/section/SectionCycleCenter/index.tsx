@@ -35,7 +35,7 @@ const SectionCycleCenter: FC<SectionCycleCenterProps> = ({ children, badges, ...
                         lg: 2
                     }}
                 >
-                    <div className={styles.content}>
+                    <div className="d--flex">
                         <div className={styles.hidden}>
                             <Margin right={8}>
                                 <Group>

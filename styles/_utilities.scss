@@ -10,6 +10,17 @@ $utilities: (
                 )
             )
     ),
+    'margin-left': (
+        property: margin-left,
+        class: ml,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto
+                )
+            )
+    ),
     'margin-right': (
         property: margin-right,
         class: mr,
@@ -59,6 +70,103 @@ $utilities: (
         property: display,
         class: d,
         values: block inline-block inline flex inline-flex
+    ),
+    'top': (
+        property: top,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto
+                )
+            )
+    ),
+    'start': (
+        property: left,
+        class: start,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto
+                )
+            )
+    ),
+    'end': (
+        property: right,
+        class: end,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto
+                )
+            )
+    ),
+    'bottom': (
+        property: bottom,
+        values:
+            map-merge(
+                $spacers,
+                (
+                    auto: auto
+                )
+            )
+    ),
+    'text-align': (
+        responsive: true,
+        property: text-align,
+        class: text,
+        values: (
+            start: left,
+            end: right,
+            center: center
+        )
+    ),
+    'align-items': (
+        responsive: true,
+        property: align-items,
+        values: (
+            start: flex-start,
+            end: flex-end,
+            center: center,
+            baseline: baseline,
+            stretch: stretch
+        )
+    ),
+    'align-self': (
+        responsive: true,
+        property: align-self,
+        values: (
+            auto: auto,
+            start: flex-start,
+            end: flex-end,
+            center: center,
+            baseline: baseline,
+            stretch: stretch
+        )
+    ),
+    'width': (
+        property: width,
+        class: w,
+        values: (
+            25: 25%,
+            50: 50%,
+            75: 75%,
+            100: 100%,
+            auto: auto
+        )
+    ),
+    'height': (
+        property: height,
+        class: h,
+        values: (
+            25: 25%,
+            50: 50%,
+            75: 75%,
+            100: 100%,
+            auto: auto
+        )
     )
 );
 

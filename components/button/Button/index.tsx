@@ -9,14 +9,18 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLElement> {
     as?: ElementType;
 }
 
-const Button: FC<ButtonProps> = ({ children, isOutline, isWhite, icon, as: Component = 'a', ...props }) => {
+const Button: FC<ButtonProps> = ({ children, className, isOutline, isWhite, icon, as: Component = 'a', ...props }) => {
     return (
         <Component
-            className={classNames('button', {
-                'button--light': isWhite,
-                'button--outline': isOutline,
-                'button--outline--light': isOutline && isWhite
-            })}
+            className={classNames(
+                'button',
+                {
+                    'button--light': isWhite,
+                    'button--outline': isOutline,
+                    'button--outline--light': isOutline && isWhite
+                },
+                className
+            )}
             {...props}
         >
             <span>
