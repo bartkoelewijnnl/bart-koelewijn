@@ -72,7 +72,7 @@ const Home: NextPage = () => {
                         leukste uitdaging was het uitwerken van een graadmeter op het score scherm. Dit heb ik gedaan met SVG en &apos;React
                         Native Animated&apos;.
                     </Paragraph>
-                    <Paragraph isItalic><span className='color--black'>Denk jij de hoogste score te halen, test je kennis hiernaast</span> of download de app.</Paragraph>
+                    <Paragraph isItalic><span className='color--black'>Denk jij de hoogste score te halen, test je kennis hiernaast</span> of bezoek de website.</Paragraph>
                     <Margin bottom={7}>
                         <Group>
                             <Badge title="SVG" icon="svg" color="blue" lightColor="lightBlue" />
@@ -80,27 +80,9 @@ const Home: NextPage = () => {
                             <Badge title="Animatie" icon="transition" color="blue" lightColor="lightBlue" />
                         </Group>
                     </Margin>
-                    <Group isLarge>
-                        <Button
-                            as="a"
-                            icon="apple"
-                            href="https://apps.apple.com/nl/app/awaretrain-security-awareness/id1527995399/"
-                            target="_blank"
-                            aria-label="Open iPhone app"
-                        >
-                            iPhone
-                        </Button>
-                        <Button
-                            as="a"
-                            icon="android"
-                            href="https://play.google.com/store/apps/details?id=nl.bluenotion.awaretrain&hl=nl/"
-                            target="_blank"
-                            aria-label="Open Android app"
-                            isOutline
-                        >
-                            Android
-                        </Button>
-                    </Group>
+                    <Button as="a" href="https://awaretrain.com/nl-nl/" target="_blank" icon="link" aria-label="Bezoek de website van Awaretrain">
+                        Bezoek Awaretrain
+                    </Button>
                 </SectionAwaretrain>
                 <SectionWebsites
                     title="Websites"
