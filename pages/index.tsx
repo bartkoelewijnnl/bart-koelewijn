@@ -146,7 +146,7 @@ const Home: NextPage = () => {
                     <Paragraph isItalic>Welke kleur fiets kies jij?</Paragraph>
                     <Button
                         as="a"
-                        href="https://configurator.apexbikes.cc/"
+                        href="https://www.cc5311.nl/"
                         target="_blank"
                         icon="link"
                         aria-label="Bezoek de Cycle Center website"
