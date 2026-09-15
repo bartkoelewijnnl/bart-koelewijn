@@ -11,7 +11,7 @@ interface SectionCareerProps {
     title: string;
 }
 
-const MAX_YEAR = 2024;
+const MAX_YEAR = 2026;
 const MIN_YEAR = 2017;
 
 const SectionCareer: FC<SectionCareerProps> = ({ title }) => {
@@ -22,9 +22,10 @@ const SectionCareer: FC<SectionCareerProps> = ({ title }) => {
             <Element id="ef2" name="ef2">
                 <div className={styles.phone}>
                     <div className={styles.content}>
-                        <Item title="Senior Front-end developer" company="EF2" height={2} width={1} columnStart={1} active />
+                        <Item title="Full stack developer" company="Gravity" height={2} width={1} columnStart={1} active />
+                        <Item title="Senior Front-end developer" company="EF2" height={2} width={1} columnStart={1} />
                         <Item title="Front-end developer" company="Bluenotion" height={3} width={1} columnStart={1} />
-                        <Item title="HBO-ICT" company="Hogeschool van Arnhem en Nijmegen (HAN)" height={4} rowStart={5} columnStart={2} />
+                        <Item title="HBO-ICT" company="Hogeschool van Arnhem en Nijmegen (HAN)" height={4} rowStart={7} columnStart={2} />
                         <Item title="Front-end developer" company="Sportunity" height={2} columnStart={1} />
                         <Item title="Junior tester" company="Kodision" height={1} columnStart={1} />
                         <Lines minYear={MIN_YEAR} maxYear={MAX_YEAR} />
