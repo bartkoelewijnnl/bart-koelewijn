@@ -22,7 +22,7 @@ jobs:
           persist-credentials: false
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           node-version: ${{ matrix.version }}
           path: ${{ github.workspace }}/.next/cache
